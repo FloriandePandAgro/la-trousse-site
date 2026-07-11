@@ -100,11 +100,11 @@ button:disabled{opacity:.6;cursor:default;transform:none;}
     <h1>Le kit pour <em>mieux gérer ta classe</em></h1>
     <p class="sub">Planning, suivi des élèves et fiches pratiques — reçois tout gratuitement par email.</p>
 
-    <form class="form" id="subscribe-form" novalidate>
-      <input type="text" id="firstName" placeholder="Ton prénom" autocomplete="given-name">
-      <input type="email" id="email" placeholder="Ton adresse email" autocomplete="email" required>
-      <button type="submit" id="submit-btn">Recevoir le kit gratuitement →</button>
-      <div class="error" id="form-error"></div>
+    <form class="form" name="ressources" method="POST" data-netlify="true" action="/merci">
+      <input type="hidden" name="form-name" value="ressources">
+      <input class="lt-rsc-input" type="text" name="firstName" placeholder="Ton prénom" autocomplete="given-name">
+      <input class="lt-rsc-input" type="email" name="email" placeholder="Ton adresse email" autocomplete="email" required>
+      <button class="lt-rsc-submit" type="submit">Recevoir le kit gratuitement →</button>
       <p class="legal">Pas de spam. Désinscription en un clic.</p>
     </form>
   </div>
@@ -115,48 +115,5 @@ button:disabled{opacity:.6;cursor:default;transform:none;}
     <p>Vérifie tes spams si tu ne reçois rien dans les 5 minutes.</p>
   </div>
 </div>
-
-<script>
-(function(){
-  var form = document.getElementById('subscribe-form');
-  var btn  = document.getElementById('submit-btn');
-  var err  = document.getElementById('form-error');
-  var ok   = document.getElementById('form-success');
-  var block= document.getElementById('form-block');
-
-  form.addEventListener('submit', async function(e){
-    e.preventDefault();
-    err.classList.remove('show');
-
-    var email     = document.getElementById('email').value.trim();
-    var firstName = document.getElementById('firstName').value.trim();
-
-    if(!email){
-      err.textContent = 'Merci de renseigner ton email.';
-      err.classList.add('show');
-      return;
-    }
-
-    btn.disabled = true;
-    btn.textContent = 'Envoi…';
-
-    try {
-      var res = await fetch('/.netlify/functions/subscribe', {
-        method:'POST',
-        headers:{'Content-Type':'application/json'},
-        body:JSON.stringify({email:email, firstName:firstName}),
-      });
-      if(res.ok){
-        window.location.href = '/merci';
-      } else { throw new Error(); }
-    } catch(_){
-      err.textContent = 'Une erreur s\'est produite. Réessaie dans quelques instants.';
-      err.classList.add('show');
-      btn.disabled = false;
-      btn.textContent = 'Recevoir le kit gratuitement →';
-    }
-  });
-})();
-</script>
 </body>
 </html>
