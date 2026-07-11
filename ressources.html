@@ -100,7 +100,7 @@ button:disabled{opacity:.6;cursor:default;transform:none;}
     <h1>Le kit pour <em>mieux gérer ta classe</em></h1>
     <p class="sub">Planning, suivi des élèves et fiches pratiques — reçois tout gratuitement par email.</p>
 
-    <form class="form" name="ressources" method="POST" data-netlify="true" action="/merci">
+    <form class="form" name="ressources" method="POST" data-netlify="true" action="/ressources?ok=1">
       <input type="hidden" name="form-name" value="ressources">
       <input class="lt-rsc-input" type="text" name="firstName" placeholder="Ton prénom" autocomplete="given-name">
       <input class="lt-rsc-input" type="email" name="email" placeholder="Ton adresse email" autocomplete="email" required>
@@ -115,5 +115,12 @@ button:disabled{opacity:.6;cursor:default;transform:none;}
     <p>Vérifie tes spams si tu ne reçois rien dans les 5 minutes.</p>
   </div>
 </div>
+
+<script>
+if (window.location.search.indexOf('ok=1') !== -1) {
+  document.getElementById('form-block').style.display = 'none';
+  document.getElementById('form-success').style.display = 'flex';
+}
+</script>
 </body>
 </html>
