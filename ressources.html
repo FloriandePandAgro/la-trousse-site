@@ -100,7 +100,7 @@ button:disabled{opacity:.6;cursor:default;transform:none;}
     <h1>Le kit pour <em>mieux gérer ta classe</em></h1>
     <p class="sub">Planning, suivi des élèves et fiches pratiques — reçois tout gratuitement par email.</p>
 
-    <form class="form" name="ressources" method="POST" data-netlify="true" action="https://www.la-trousse.fr/ressources?ok=1">
+    <form class="form" id="lt-rsc-form" name="ressources" method="POST" netlify>
       <input type="hidden" name="form-name" value="ressources">
       <input class="lt-rsc-input" type="text" name="firstName" placeholder="Ton prénom" autocomplete="given-name">
       <input class="lt-rsc-input" type="email" name="email" placeholder="Ton adresse email" autocomplete="email" required>
@@ -117,10 +117,23 @@ button:disabled{opacity:.6;cursor:default;transform:none;}
 </div>
 
 <script>
-if (window.location.search.indexOf('ok=1') !== -1) {
-  document.getElementById('form-block').style.display = 'none';
-  document.getElementById('form-success').style.display = 'flex';
-}
+document.getElementById('lt-rsc-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  var btn = this.querySelector('button');
+  btn.disabled = true;
+  btn.textContent = 'Envoi en cours…';
+  fetch('/', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+    body: new URLSearchParams(new FormData(this)).toString()
+  }).then(function() {
+    document.getElementById('form-block').style.display = 'none';
+    document.getElementById('form-success').style.display = 'flex';
+  }).catch(function() {
+    btn.disabled = false;
+    btn.textContent = 'Recevoir le kit gratuitement →';
+  });
+});
 </script>
 </body>
 </html>
