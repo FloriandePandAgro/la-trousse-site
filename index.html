@@ -113,11 +113,15 @@ body{margin:0;padding:0;}
   .ltv-hero-fan{height:230px;}
   @keyframes ltv-book-in{from{opacity:0;transform:translateX(0) rotate(0deg) translateY(40px) scale(.82);}to{opacity:1;transform:translateX(calc((var(--i) - 4) * 62px)) rotate(calc((var(--i) - 4) * 5deg));}}
 }
+@media(max-width:640px){
+  .ltv-hero h1 em{white-space:normal;}
+}
 @media(max-width:560px){
   .ltv-grid{grid-template-columns:1fr;}
   .ltv-trust-in{grid-template-columns:1fr;}
   .ltv-hero{padding:52px 18px 44px;}
   .ltv-sec{padding:56px 18px;}
+  .ltv-hero h1{font-size:clamp(1.9rem,8vw,2.4rem);}
   .ltv-hero-fan{height:170px;}
   .ltv-hero-book{width:86px;transform:translateX(calc((var(--i) - 4) * 40px)) rotate(calc((var(--i) - 4) * 5deg));}
 }
@@ -1000,12 +1004,12 @@ body{margin:0;padding:0;}
         id="lt-contact-button"
         class="lt-floating-button"
         type="button"
-        aria-label="Contacter la trousse"
-        title="Contacter la trousse"
+        aria-label="Contacter La trousse"
+        title="Contacter La trousse"
       >
         <img
           src="https://images.pandagro-svt.fr/Images%20agendas%20la%20trousse/logo%20blanc%20sans%20fond%20sans%20ecriture%20%20la%20trousse.png"
-          alt="la trousse"
+          alt="La trousse"
         >
 
         <span
@@ -1028,7 +1032,7 @@ body{margin:0;padding:0;}
     role="dialog"
     aria-modal="true"
     aria-hidden="true"
-    aria-label="Formulaire de contact la trousse"
+    aria-label="Formulaire de contact La trousse"
   >
 
     <div id="lt-contact-header">
@@ -1037,13 +1041,13 @@ body{margin:0;padding:0;}
         <img
           id="lt-header-logo"
           src="https://images.pandagro-svt.fr/Images%20agendas%20la%20trousse/logo%20blanc%20sans%20fond%20sans%20ecriture%20%20la%20trousse.png"
-          alt="la trousse"
+          alt="La trousse"
         >
       </div>
 
       <div id="lt-header-information">
         <div id="lt-header-title">
-          la trousse
+          La trousse
         </div>
 
         <div id="lt-header-status">
@@ -1068,7 +1072,7 @@ body{margin:0;padding:0;}
         Une question sur nos agendas ? Envoyez-nous votre message et nous
         vous répondrons dans les plus brefs délais.
         <br><br>
-        <strong>L’équipe la trousse 😊</strong>
+        <strong>L’équipe La trousse 😊</strong>
       </div>
 
       <input
@@ -1303,7 +1307,7 @@ body{margin:0;padding:0;}
         message: customerMessage,
         page_url: window.location.href,
         to_email: LT_CONFIG.destinationEmail,
-        website_name: "la trousse"
+        website_name: "La trousse"
       };
 
       emailjs
