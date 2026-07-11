@@ -1,14 +1,18 @@
 const https = require('https');
 
-function post(options, body) {
+const TAG_ID = 2089814; // "La Trousse - Ressources"
+
+function apiCall(options, body) {
   return new Promise((resolve, reject) => {
+    const timer = setTimeout(() => reject(new Error('timeout')), 8000);
     const req = https.request(options, (res) => {
+      clearTimeout(timer);
       let data = '';
-      res.on('data', (chunk) => { data += chunk; });
+      res.on('data', (c) => { data += c; });
       res.on('end', () => resolve({ status: res.statusCode, body: data }));
     });
-    req.on('error', reject);
-    req.write(body);
+    req.on('error', (e) => { clearTimeout(timer); reject(e); });
+    if (body) req.write(body);
     req.end();
   });
 }
@@ -18,10 +22,12 @@ exports.handler = async (event) => {
     return { statusCode: 405, body: 'Method Not Allowed' };
   }
 
-  let email, firstName;
+  let email = '', firstName = '';
   try {
-    ({ email, firstName = '' } = JSON.parse(event.body));
-  } catch {
+    const parsed = typeof event.body === 'string' ? JSON.parse(event.body) : (event.body || {});
+    email = (parsed.email || '').trim();
+    firstName = (parsed.firstName || '').trim();
+  } catch (e) {
     return { statusCode: 400, body: JSON.stringify({ error: 'Corps invalide' }) };
   }
 
@@ -35,34 +41,52 @@ exports.handler = async (event) => {
     return { statusCode: 500, body: JSON.stringify({ error: 'Config manquante' }) };
   }
 
-  const payload = JSON.stringify({
-    email,
-    firstName,
-    tags: [{ name: 'La Trousse - Ressources' }],
-  });
-
-  const options = {
-    hostname: 'api.systeme.io',
-    path: '/api/contacts',
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Content-Length': Buffer.byteLength(payload),
-      'X-API-Key': apiKey,
-    },
-  };
-
   try {
-    const res = await post(options, payload);
-    console.log('SIO status:', res.status, res.body);
+    // Étape 1 : créer le contact
+    const contactPayload = JSON.stringify({ email, firstName });
+    const createRes = await apiCall({
+      hostname: 'api.systeme.io',
+      path: '/api/contacts',
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Content-Length': Buffer.byteLength(contactPayload),
+        'X-API-Key': apiKey,
+      },
+    }, contactPayload);
 
-    if (res.status === 200 || res.status === 201 || res.status === 409) {
-      return { statusCode: 200, body: JSON.stringify({ success: true }) };
+    console.log('SIO create:', createRes.status, createRes.body);
+
+    let contactId = null;
+    if (createRes.status === 200 || createRes.status === 201) {
+      try { contactId = JSON.parse(createRes.body).id; } catch {}
+    } else if (createRes.status === 409) {
+      // Contact déjà existant — on récupère l'ID quand même
+      try { contactId = JSON.parse(createRes.body).id; } catch {}
+    } else {
+      console.error('SIO create error:', createRes.status, createRes.body);
+      return { statusCode: 502, body: JSON.stringify({ error: 'Erreur Systeme.io' }) };
     }
 
-    return { statusCode: 502, body: JSON.stringify({ error: 'Erreur Systeme.io', detail: res.body }) };
+    // Étape 2 : assigner le tag
+    if (contactId) {
+      const tagPayload = JSON.stringify({ id: TAG_ID });
+      const tagRes = await apiCall({
+        hostname: 'api.systeme.io',
+        path: `/api/contacts/${contactId}/tags`,
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Content-Length': Buffer.byteLength(tagPayload),
+          'X-API-Key': apiKey,
+        },
+      }, tagPayload);
+      console.log('SIO tag:', tagRes.status, tagRes.body);
+    }
+
+    return { statusCode: 200, body: JSON.stringify({ success: true }) };
   } catch (e) {
-    console.error('Erreur réseau:', e.message);
+    console.error('Erreur:', e.message);
     return { statusCode: 500, body: JSON.stringify({ error: e.message }) };
   }
 };
