@@ -67,7 +67,7 @@ Suffixe commun : `?binding=paperback&ref=dbs_dp_rwt_sb_pc_tpbk`
 - Maths : `B0H7Z6GX8G`
 - EPS : `B0H7YZ9GYP`
 - PC : `B0H7YRT9S9`
-- **Anglais : PAS ENCORE DE LIEN** (produit à venir)
+- Anglais : `B0H8FL21PL`
 
 Bookmundo (boutique, toutes matières) : `https://publishnl.bookmundo.com/site/?r=userwebsite/index&id=agendaslatrousse`
 
@@ -78,7 +78,7 @@ Bookmundo (boutique, toutes matières) : `https://publishnl.bookmundo.com/site/?
 3. **"Imprimé en France" = Bookmundo UNIQUEMENT**, jamais Amazon. Ne jamais laisser une formulation qui laisse croire qu'Amazon imprime en France.
 4. **Footer** (identique sur toutes les pages) : `Imprimé à la demande (pas de gâchis) et distribué via Amazon & Bookmundo.`
 5. **SVT** : positionné "La Trousse × Pandagro" (Pandagro = caution d'expertise SVT, pas partenaire effacé). Garde le badge partenariat, la note 4,7★, le jeu de cartes SVT.
-6. **Anglais** : toutes les couvertures en "Bientôt disponible", CTA neutralisés, seul le bouton Bookmundo est actif.
+6. **Anglais** : désormais disponible sur Amazon (`B0H8FL21PL`). Couvertures et CTAs tous actifs.
 7. **H1 format** : "L'agenda pour prof de/d'[matière] qui comprend **vraiment votre métier**" (jamais "L'agenda de [matière]" seul, ambigu).
 8. **Titres SEO** : DOIVENT contenir "2026-2027" (mettre à jour chaque année dans le title ET la description).
 9. **Listes à puces** : toujours alignées à gauche, jamais centrées.
