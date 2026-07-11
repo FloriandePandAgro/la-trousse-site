@@ -1,0 +1,18 @@
+{
+  "brand": "La Trousse",
+  "annee": "2026-2027",
+  "prix": "11,55 €",
+  "bookmundo": "https://publishnl.bookmundo.com/site/?r=userwebsite/index&id=agendaslatrousse",
+  "footer": "Imprimé à la demande (pas de gâchis) et distribué via Amazon & Bookmundo.",
+  "matieres": [
+    {"nom": "SVT", "slug": "svt", "pages": 214, "couvertures": 18, "serie": "B0H3WWSC29", "dispo": true, "note": "La Trousse × Pandagro"},
+    {"nom": "Physique-Chimie", "slug": "physique-chimie", "pages": 208, "couvertures": 9, "serie": "B0H7YRT9S9", "dispo": true},
+    {"nom": "Maths", "slug": "maths", "pages": 208, "couvertures": 10, "serie": "B0H7Z6GX8G", "dispo": true},
+    {"nom": "Français", "slug": "francais", "pages": 208, "couvertures": 6, "serie": "B0H7Z1DN7Z", "dispo": true},
+    {"nom": "Histoire-Géo", "slug": "histoire-geographie", "pages": 208, "couvertures": 6, "serie": "B0H79CTW6W", "dispo": true},
+    {"nom": "EPS", "slug": "eps", "pages": 208, "couvertures": 6, "serie": "B0H7YZ9GYP", "dispo": true},
+    {"nom": "Espagnol", "slug": "espagnol", "pages": 208, "couvertures": 9, "serie": "B0H7Z2R65D", "dispo": true},
+    {"nom": "Enseignant", "slug": "enseignant", "pages": 208, "couvertures": 9, "serie": "B0GX36QB7H", "dispo": true},
+    {"nom": "Anglais", "slug": "anglais", "pages": 208, "couvertures": 8, "serie": null, "dispo": false}
+  ]
+}
