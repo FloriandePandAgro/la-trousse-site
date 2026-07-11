@@ -78,7 +78,8 @@ body{margin:0;padding:0;}
 .lt-partner{display:block;margin-top:22px;padding:14px 18px;background:var(--wash);border:1px solid var(--line);border-left:3px solid var(--navy2);border-radius:10px;font-size:13.5px;font-weight:600;color:var(--navy);line-height:1.6;text-align:left;max-width:480px;}
 .lt-partner strong{font-weight:800;}
 .lt-hero-img{display:flex;align-items:center;justify-content:center;}
-.lt-hero-img img{width:112%;max-width:none;height:auto;max-height:560px;object-fit:contain;filter:drop-shadow(0 24px 40px rgba(30,45,90,.16));}
+.lt-hero-img img{width:112%;max-width:none;height:auto;max-height:560px;object-fit:contain;filter:drop-shadow(0 24px 40px rgba(30,45,90,.16));transition:transform .45s cubic-bezier(.22,.61,.36,1),filter .45s;}
+.lt-hero-img:hover img{transform:scale(1.04) translateY(-8px);filter:drop-shadow(0 40px 56px rgba(30,45,90,.28));}
 
 /* ── STATS (bandeau) ── */
 .lt-stats{max-width:1000px;margin:60px auto 0;padding:0 24px;}
