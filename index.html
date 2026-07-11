@@ -223,5 +223,1225 @@ body{margin:0;padding:0;}
   </div>
 
 </div>
+
+
+<!-- ============================================================
+     WIDGET LA TROUSSE
+     Amazon + Bookmundo + formulaire de contact
+     ============================================================ -->
+
+<style>
+  #lt-widget,
+  #lt-widget * {
+    box-sizing: border-box !important;
+    font-family: Arial, "Segoe UI", sans-serif !important;
+  }
+
+  /* ============================================================
+     CONTENEUR DES BULLES
+     ============================================================ */
+
+  #lt-buttons {
+    position: fixed !important;
+    right: 18px !important;
+    bottom: 18px !important;
+    z-index: 2147483647 !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-end !important;
+    gap: 10px !important;
+  }
+
+  .lt-bubble-wrapper {
+    position: relative !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .lt-floating-button {
+    position: relative !important;
+
+    width: 58px !important;
+    height: 58px !important;
+    min-width: 58px !important;
+    min-height: 58px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    margin: 0 !important;
+    padding: 6px !important;
+
+    border: none !important;
+    border-radius: 50% !important;
+    outline: none !important;
+
+    text-decoration: none !important;
+    cursor: pointer !important;
+
+    box-shadow:
+      0 5px 17px rgba(0, 0, 0, 0.20),
+      0 2px 6px rgba(0, 0, 0, 0.10) !important;
+
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease !important;
+  }
+
+  .lt-floating-button:hover {
+    transform: translateY(-2px) scale(1.05) !important;
+
+    box-shadow:
+      0 8px 22px rgba(0, 0, 0, 0.24),
+      0 3px 8px rgba(0, 0, 0, 0.12) !important;
+  }
+
+  .lt-floating-button:active {
+    transform: scale(0.96) !important;
+  }
+
+  /* ============================================================
+     CROIX DE FERMETURE
+     ============================================================ */
+
+  .lt-bubble-close {
+    position: absolute !important;
+    top: -6px !important;
+    right: -6px !important;
+    z-index: 10 !important;
+
+    width: 20px !important;
+    height: 20px !important;
+    min-width: 20px !important;
+    min-height: 20px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    border: 1px solid #e1e1e1 !important;
+    border-radius: 50% !important;
+
+    background: #ffffff !important;
+    color: #555555 !important;
+
+    font-family: Arial, sans-serif !important;
+    font-size: 15px !important;
+    font-weight: 400 !important;
+    line-height: 20px !important;
+
+    cursor: pointer !important;
+    pointer-events: auto !important;
+
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.18) !important;
+  }
+
+  .lt-bubble-close:hover {
+    background: #eeeeee !important;
+    color: #111111 !important;
+  }
+
+  /* ============================================================
+     AMAZON
+     ============================================================ */
+
+  #lt-amazon-button {
+    background: #ffffff !important;
+    border: 1px solid #e8e8e8 !important;
+  }
+
+  #lt-amazon-button img {
+    display: block !important;
+
+    width: auto !important;
+    height: auto !important;
+
+    max-width: 40px !important;
+    max-height: 40px !important;
+
+    object-fit: contain !important;
+  }
+
+  /* ============================================================
+     BOOKMUNDO
+     ============================================================ */
+
+  #lt-bookmundo-button {
+    background: #ffffff !important;
+    border: 1px solid #e8e8e8 !important;
+  }
+
+  #lt-bookmundo-button img {
+    display: block !important;
+
+    width: auto !important;
+    height: auto !important;
+
+    max-width: 41px !important;
+    max-height: 41px !important;
+
+    object-fit: contain !important;
+  }
+
+  /* ============================================================
+     CONTACT LA TROUSSE
+     ============================================================ */
+
+  #lt-contact-button {
+    padding: 3px !important;
+
+    background: linear-gradient(
+      135deg,
+      #0b234f 0%,
+      #18458d 100%
+    ) !important;
+
+    animation: lt-contact-bounce 2.6s ease-in-out infinite !important;
+  }
+
+  #lt-contact-button:hover {
+    animation: none !important;
+  }
+
+  #lt-contact-button img {
+    display: block !important;
+
+    width: 54px !important;
+    height: 54px !important;
+
+    max-width: 54px !important;
+    max-height: 54px !important;
+
+    object-fit: contain !important;
+  }
+
+  #lt-contact-badge {
+    position: absolute !important;
+    top: -4px !important;
+    right: -4px !important;
+
+    width: 22px !important;
+    height: 22px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    border: 1px solid #ffffff !important;
+    border-radius: 50% !important;
+
+    background: #ffffff !important;
+
+    font-size: 12px !important;
+    line-height: 1 !important;
+
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.18) !important;
+  }
+
+  @keyframes lt-contact-bounce {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-5px);
+    }
+  }
+
+  /* ============================================================
+     TEXTES AU SURVOL
+     ============================================================ */
+
+  .lt-floating-button::before {
+    position: absolute !important;
+    right: calc(100% + 10px) !important;
+    top: 50% !important;
+
+    transform: translateY(-50%) translateX(5px) !important;
+
+    padding: 7px 10px !important;
+
+    border-radius: 8px !important;
+
+    background: rgba(20, 20, 20, 0.92) !important;
+    color: #ffffff !important;
+
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+
+    opacity: 0 !important;
+    visibility: hidden !important;
+
+    pointer-events: none !important;
+
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s ease,
+      visibility 0.2s ease !important;
+  }
+
+  #lt-amazon-button::before {
+    content: "Acheter sur Amazon" !important;
+  }
+
+  #lt-bookmundo-button::before {
+    content: "Acheter sur Bookmundo" !important;
+  }
+
+  #lt-contact-button::before {
+    content: "Nous contacter" !important;
+  }
+
+  .lt-floating-button:hover::before {
+    opacity: 1 !important;
+    visibility: visible !important;
+
+    transform: translateY(-50%) translateX(0) !important;
+  }
+
+  /* ============================================================
+     FENÊTRE DE CONTACT
+     ============================================================ */
+
+  #lt-contact-window {
+    position: fixed !important;
+    right: 18px !important;
+    bottom: 88px !important;
+    z-index: 2147483646 !important;
+
+    width: 355px !important;
+    max-width: calc(100vw - 30px) !important;
+
+    display: none !important;
+    flex-direction: column !important;
+
+    overflow: hidden !important;
+
+    border: 1px solid rgba(11, 35, 79, 0.10) !important;
+    border-radius: 18px !important;
+
+    background: #ffffff !important;
+
+    box-shadow:
+      0 15px 50px rgba(0, 0, 0, 0.24),
+      0 4px 12px rgba(0, 0, 0, 0.10) !important;
+  }
+
+  #lt-contact-window.lt-open {
+    display: flex !important;
+
+    animation: lt-window-open 0.22s ease-out !important;
+  }
+
+  @keyframes lt-window-open {
+    from {
+      opacity: 0;
+      transform: translateY(12px) scale(0.97);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  /* ============================================================
+     HEADER DE LA FENÊTRE
+     ============================================================ */
+
+  #lt-contact-header {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+
+    padding: 15px 17px !important;
+
+    background: linear-gradient(
+      135deg,
+      #0b234f 0%,
+      #18458d 100%
+    ) !important;
+  }
+
+  #lt-header-logo-box {
+    width: 62px !important;
+    height: 62px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    flex-shrink: 0 !important;
+
+    padding: 2px !important;
+
+    border: 2px solid rgba(255, 255, 255, 0.45) !important;
+    border-radius: 50% !important;
+
+    background: rgba(255, 255, 255, 0.10) !important;
+  }
+
+  #lt-header-logo {
+    display: block !important;
+
+    width: 58px !important;
+    height: 58px !important;
+
+    max-width: 58px !important;
+    max-height: 58px !important;
+
+    object-fit: contain !important;
+  }
+
+  #lt-header-information {
+    flex: 1 !important;
+    min-width: 0 !important;
+  }
+
+  #lt-header-title {
+    color: #ffffff !important;
+
+    font-size: 17px !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+  }
+
+  #lt-header-status {
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+
+    margin-top: 4px !important;
+
+    color: rgba(255, 255, 255, 0.80) !important;
+
+    font-size: 12px !important;
+    line-height: 1.2 !important;
+  }
+
+  #lt-header-status::before {
+    content: "" !important;
+
+    display: block !important;
+
+    width: 8px !important;
+    height: 8px !important;
+
+    flex-shrink: 0 !important;
+
+    border-radius: 50% !important;
+
+    background: #4ee27d !important;
+  }
+
+  #lt-close-button {
+    width: 34px !important;
+    height: 34px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    flex-shrink: 0 !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    border: none !important;
+    border-radius: 50% !important;
+
+    background: transparent !important;
+    color: #ffffff !important;
+
+    font-size: 22px !important;
+    line-height: 1 !important;
+
+    cursor: pointer !important;
+  }
+
+  #lt-close-button:hover {
+    background: rgba(255, 255, 255, 0.14) !important;
+  }
+
+  /* ============================================================
+     CORPS DU FORMULAIRE
+     ============================================================ */
+
+  #lt-contact-body {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 13px !important;
+
+    padding: 18px !important;
+
+    background: #ffffff !important;
+  }
+
+  #lt-welcome-message {
+    padding: 13px 14px !important;
+
+    border-radius: 5px 16px 16px 16px !important;
+
+    background: #f0f4fa !important;
+    color: #222222 !important;
+
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+  }
+
+  .lt-field {
+    width: 100% !important;
+
+    margin: 0 !important;
+    padding: 11px 13px !important;
+
+    border: 1.5px solid #dfe4ec !important;
+    border-radius: 10px !important;
+
+    outline: none !important;
+
+    background: #ffffff !important;
+    color: #222222 !important;
+
+    font-size: 13.5px !important;
+    line-height: 1.4 !important;
+
+    transition:
+      border-color 0.15s ease,
+      box-shadow 0.15s ease !important;
+  }
+
+  .lt-field:focus {
+    border-color: #18458d !important;
+
+    box-shadow: 0 0 0 3px rgba(24, 69, 141, 0.10) !important;
+  }
+
+  #lt-message {
+    min-height: 105px !important;
+    resize: vertical !important;
+  }
+
+  #lt-send-button {
+    width: 100% !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+
+    margin: 0 !important;
+    padding: 12px 14px !important;
+
+    border: none !important;
+    border-radius: 10px !important;
+
+    background: linear-gradient(
+      135deg,
+      #0b234f 0%,
+      #18458d 100%
+    ) !important;
+
+    color: #ffffff !important;
+
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+
+    cursor: pointer !important;
+
+    transition:
+      filter 0.15s ease,
+      transform 0.1s ease !important;
+  }
+
+  #lt-send-button:hover {
+    filter: brightness(1.07) !important;
+  }
+
+  #lt-send-button:active {
+    transform: scale(0.98) !important;
+  }
+
+  #lt-send-button:disabled {
+    cursor: wait !important;
+    opacity: 0.75 !important;
+  }
+
+  #lt-success-message,
+  #lt-error-message {
+    display: none !important;
+
+    padding: 12px 14px !important;
+
+    border-radius: 10px !important;
+
+    font-size: 13.5px !important;
+    line-height: 1.4 !important;
+    text-align: center !important;
+  }
+
+  #lt-success-message {
+    border: 1px solid #a5d6a7 !important;
+
+    background: #e8f5e9 !important;
+    color: #2e7d32 !important;
+  }
+
+  #lt-error-message {
+    border: 1px solid #ef9a9a !important;
+
+    background: #ffebee !important;
+    color: #c62828 !important;
+  }
+
+  .lt-spinner {
+    width: 16px !important;
+    height: 16px !important;
+
+    border: 2px solid rgba(255, 255, 255, 0.40) !important;
+    border-top-color: #ffffff !important;
+    border-radius: 50% !important;
+
+    animation: lt-spinner-rotation 0.7s linear infinite !important;
+  }
+
+  @keyframes lt-spinner-rotation {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* ============================================================
+     MOBILE
+     ============================================================ */
+
+  @media screen and (max-width: 640px) {
+    #lt-buttons {
+      right: 10px !important;
+      bottom: 12px !important;
+      gap: 9px !important;
+    }
+
+    .lt-floating-button {
+      width: 52px !important;
+      height: 52px !important;
+      min-width: 52px !important;
+      min-height: 52px !important;
+
+      padding: 5px !important;
+    }
+
+    #lt-amazon-button img {
+      max-width: 36px !important;
+      max-height: 36px !important;
+    }
+
+    #lt-bookmundo-button img {
+      max-width: 37px !important;
+      max-height: 37px !important;
+    }
+
+    #lt-contact-button {
+      padding: 2px !important;
+    }
+
+    #lt-contact-button img {
+      width: 48px !important;
+      height: 48px !important;
+
+      max-width: 48px !important;
+      max-height: 48px !important;
+    }
+
+    #lt-contact-badge {
+      width: 20px !important;
+      height: 20px !important;
+
+      font-size: 11px !important;
+    }
+
+    #lt-contact-window {
+      left: 10px !important;
+      right: 10px !important;
+      bottom: 75px !important;
+
+      width: auto !important;
+      max-width: none !important;
+      max-height: calc(100vh - 90px) !important;
+
+      overflow-y: auto !important;
+    }
+
+    #lt-header-logo-box {
+      width: 58px !important;
+      height: 58px !important;
+    }
+
+    #lt-header-logo {
+      width: 54px !important;
+      height: 54px !important;
+
+      max-width: 54px !important;
+      max-height: 54px !important;
+    }
+
+    .lt-floating-button::before {
+      display: none !important;
+    }
+  }
+</style>
+
+<div id="lt-widget">
+
+  <!-- ==========================================================
+       BULLES
+       ========================================================== -->
+
+  <div id="lt-buttons">
+
+    <!-- AMAZON -->
+
+    <div
+      id="lt-amazon-wrapper"
+      class="lt-bubble-wrapper"
+    >
+      <button
+        class="lt-bubble-close"
+        type="button"
+        data-target="lt-amazon-wrapper"
+        aria-label="Masquer la bulle Amazon"
+      >
+        ×
+      </button>
+
+      <a
+        id="lt-amazon-button"
+        class="lt-floating-button"
+        href="https://www.amazon.fr/dp/B0GX36QB7H?binding=paperback&ref=dbs_dp_rwt_sb_pc_tpbk"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Voir les agendas sur Amazon"
+        title="Voir les agendas sur Amazon"
+      >
+        <img
+          src="https://images.pandagro-svt.fr/Images%20agendas%20la%20trousse/logo%20amazon%20sans%20fond%20(1).png"
+          alt="Amazon"
+        >
+      </a>
+    </div>
+
+    <!-- BOOKMUNDO -->
+
+    <div
+      id="lt-bookmundo-wrapper"
+      class="lt-bubble-wrapper"
+    >
+      <button
+        class="lt-bubble-close"
+        type="button"
+        data-target="lt-bookmundo-wrapper"
+        aria-label="Masquer la bulle Bookmundo"
+      >
+        ×
+      </button>
+
+      <a
+        id="lt-bookmundo-button"
+        class="lt-floating-button"
+        href="https://publishnl.bookmundo.com/site/?r=userwebsite/index&id=agendaslatrousse"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Voir les agendas sur Bookmundo"
+        title="Voir les agendas sur Bookmundo"
+      >
+        <img
+          src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/logo%20abookmundo%20sans%20ecriture%20bookmundo%20sans%20fond.png"
+          alt="Bookmundo"
+        >
+      </a>
+    </div>
+
+    <!-- CONTACT -->
+
+    <div
+      id="lt-contact-wrapper"
+      class="lt-bubble-wrapper"
+    >
+      <button
+        class="lt-bubble-close"
+        type="button"
+        data-target="lt-contact-wrapper"
+        aria-label="Masquer la bulle de contact"
+      >
+        ×
+      </button>
+
+      <button
+        id="lt-contact-button"
+        class="lt-floating-button"
+        type="button"
+        aria-label="Contacter la trousse"
+        title="Contacter la trousse"
+      >
+        <img
+          src="https://images.pandagro-svt.fr/Images%20agendas%20la%20trousse/logo%20blanc%20sans%20fond%20sans%20ecriture%20%20la%20trousse.png"
+          alt="la trousse"
+        >
+
+        <span
+          id="lt-contact-badge"
+          aria-hidden="true"
+        >
+          💬
+        </span>
+      </button>
+    </div>
+
+  </div>
+
+  <!-- ==========================================================
+       FENÊTRE DE CONTACT
+       ========================================================== -->
+
+  <div
+    id="lt-contact-window"
+    role="dialog"
+    aria-modal="true"
+    aria-hidden="true"
+    aria-label="Formulaire de contact la trousse"
+  >
+
+    <div id="lt-contact-header">
+
+      <div id="lt-header-logo-box">
+        <img
+          id="lt-header-logo"
+          src="https://images.pandagro-svt.fr/Images%20agendas%20la%20trousse/logo%20blanc%20sans%20fond%20sans%20ecriture%20%20la%20trousse.png"
+          alt="la trousse"
+        >
+      </div>
+
+      <div id="lt-header-information">
+        <div id="lt-header-title">
+          la trousse
+        </div>
+
+        <div id="lt-header-status">
+          En ligne · répond rapidement
+        </div>
+      </div>
+
+      <button
+        id="lt-close-button"
+        type="button"
+        aria-label="Fermer le formulaire"
+      >
+        ✕
+      </button>
+
+    </div>
+
+    <div id="lt-contact-body">
+
+      <div id="lt-welcome-message">
+        Bonjour 👋<br>
+        Une question sur nos agendas ? Envoyez-nous votre message et nous
+        vous répondrons dans les plus brefs délais.
+        <br><br>
+        <strong>L’équipe la trousse 😊</strong>
+      </div>
+
+      <input
+        id="lt-email"
+        class="lt-field"
+        type="email"
+        placeholder="Votre adresse e-mail"
+        autocomplete="email"
+      >
+
+      <textarea
+        id="lt-message"
+        class="lt-field"
+        placeholder="Écrivez votre message ici..."
+      ></textarea>
+
+      <button
+        id="lt-send-button"
+        type="button"
+      >
+        ✉️ Envoyer le message
+      </button>
+
+      <div id="lt-success-message">
+        ✅ Votre message a bien été envoyé. Un e-mail de confirmation vient de vous être adressé.
+      </div>
+
+      <div id="lt-error-message">
+        Une erreur est survenue. Vérifiez les informations indiquées et réessayez.
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     EMAILJS
+     ============================================================ -->
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+  (function () {
+    var LT_CONFIG = {
+      publicKey: "1JxSuGDrkeYVU0IV-",
+      serviceId: "service_l3swpxd",
+      templateId: "template_mlsp1tl",
+      destinationEmail: "contact@la-trousse.fr"
+    };
+
+    var ltChatIsOpen = false;
+
+    function ltGetElement(id) {
+      return document.getElementById(id);
+    }
+
+    function ltHideFeedback() {
+      var successMessage =
+        ltGetElement("lt-success-message");
+
+      var errorMessage =
+        ltGetElement("lt-error-message");
+
+      if (successMessage) {
+        successMessage.style.setProperty(
+          "display",
+          "none",
+          "important"
+        );
+      }
+
+      if (errorMessage) {
+        errorMessage.style.setProperty(
+          "display",
+          "none",
+          "important"
+        );
+      }
+    }
+
+    function ltOpenWindow() {
+      var contactWindow =
+        ltGetElement("lt-contact-window");
+
+      var contactButton =
+        ltGetElement("lt-contact-button");
+
+      if (!contactWindow) {
+        return;
+      }
+
+      ltChatIsOpen = true;
+
+      contactWindow.classList.add("lt-open");
+
+      contactWindow.setAttribute(
+        "aria-hidden",
+        "false"
+      );
+
+      if (contactButton) {
+        contactButton.style.animation = "none";
+      }
+
+      setTimeout(function () {
+        var emailField =
+          ltGetElement("lt-email");
+
+        if (emailField) {
+          emailField.focus();
+        }
+      }, 150);
+    }
+
+    function ltCloseWindow() {
+      var contactWindow =
+        ltGetElement("lt-contact-window");
+
+      if (!contactWindow) {
+        return;
+      }
+
+      ltChatIsOpen = false;
+
+      contactWindow.classList.remove("lt-open");
+
+      contactWindow.setAttribute(
+        "aria-hidden",
+        "true"
+      );
+    }
+
+    function ltToggleWindow() {
+      if (ltChatIsOpen) {
+        ltCloseWindow();
+      } else {
+        ltOpenWindow();
+      }
+    }
+
+    function ltHideBubble(targetId) {
+      var wrapper =
+        ltGetElement(targetId);
+
+      if (!wrapper) {
+        return;
+      }
+
+      wrapper.style.setProperty(
+        "display",
+        "none",
+        "important"
+      );
+
+      if (targetId === "lt-contact-wrapper") {
+        ltCloseWindow();
+      }
+    }
+
+    function ltSendMessage() {
+      var emailField =
+        ltGetElement("lt-email");
+
+      var messageField =
+        ltGetElement("lt-message");
+
+      var sendButton =
+        ltGetElement("lt-send-button");
+
+      var successMessage =
+        ltGetElement("lt-success-message");
+
+      var errorMessage =
+        ltGetElement("lt-error-message");
+
+      if (
+        !emailField ||
+        !messageField ||
+        !sendButton ||
+        !successMessage ||
+        !errorMessage
+      ) {
+        return;
+      }
+
+      ltHideFeedback();
+
+      var customerEmail =
+        emailField.value.trim();
+
+      var customerMessage =
+        messageField.value.trim();
+
+      if (!customerEmail) {
+        alert("Merci d’indiquer votre adresse e-mail.");
+
+        emailField.focus();
+
+        return;
+      }
+
+      var emailPattern =
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (!emailPattern.test(customerEmail)) {
+        alert("L’adresse e-mail indiquée n’est pas valide.");
+
+        emailField.focus();
+
+        return;
+      }
+
+      if (!customerMessage) {
+        alert("Merci d’écrire votre message.");
+
+        messageField.focus();
+
+        return;
+      }
+
+      sendButton.disabled = true;
+
+      sendButton.innerHTML =
+        '<span class="lt-spinner"></span>' +
+        '<span>Envoi en cours...</span>';
+
+      var templateParameters = {
+        from_name: "Visiteur du site",
+        from_email: customerEmail,
+        email: customerEmail,
+        reply_to: customerEmail,
+        message: customerMessage,
+        page_url: window.location.href,
+        to_email: LT_CONFIG.destinationEmail,
+        website_name: "la trousse"
+      };
+
+      emailjs
+        .send(
+          LT_CONFIG.serviceId,
+          LT_CONFIG.templateId,
+          templateParameters
+        )
+        .then(function () {
+          sendButton.disabled = false;
+
+          sendButton.innerHTML =
+            "✉️ Envoyer le message";
+
+          successMessage.style.setProperty(
+            "display",
+            "block",
+            "important"
+          );
+
+          emailField.value = "";
+          messageField.value = "";
+        })
+        .catch(function (error) {
+          sendButton.disabled = false;
+
+          sendButton.innerHTML =
+            "✉️ Envoyer le message";
+
+          var errorDetails =
+            error && error.text
+              ? error.text
+              : "Erreur inconnue";
+
+          errorMessage.textContent =
+            "Une erreur est survenue : " +
+            errorDetails;
+
+          errorMessage.style.setProperty(
+            "display",
+            "block",
+            "important"
+          );
+
+          console.error(
+            "Erreur EmailJS :",
+            error
+          );
+        });
+    }
+
+    function ltInit() {
+      if (typeof emailjs === "undefined") {
+        console.error(
+          "EmailJS n’a pas été chargé."
+        );
+
+        return;
+      }
+
+      try {
+        emailjs.init({
+          publicKey: LT_CONFIG.publicKey
+        });
+      } catch (error) {
+        console.error(
+          "Erreur d’initialisation EmailJS :",
+          error
+        );
+      }
+
+      var contactButton =
+        ltGetElement("lt-contact-button");
+
+      var closeButton =
+        ltGetElement("lt-close-button");
+
+      var sendButton =
+        ltGetElement("lt-send-button");
+
+      if (contactButton) {
+        contactButton.addEventListener(
+          "click",
+          ltToggleWindow
+        );
+      }
+
+      if (closeButton) {
+        closeButton.addEventListener(
+          "click",
+          ltCloseWindow
+        );
+      }
+
+      if (sendButton) {
+        sendButton.addEventListener(
+          "click",
+          ltSendMessage
+        );
+      }
+
+      var bubbleCloseButtons =
+        document.querySelectorAll(
+          "#lt-widget .lt-bubble-close"
+        );
+
+      bubbleCloseButtons.forEach(
+        function (button) {
+          button.addEventListener(
+            "click",
+            function (event) {
+              event.preventDefault();
+              event.stopPropagation();
+
+              var targetId =
+                button.getAttribute(
+                  "data-target"
+                );
+
+              ltHideBubble(targetId);
+            }
+          );
+        }
+      );
+
+      document.addEventListener(
+        "keydown",
+        function (event) {
+          if (
+            event.key === "Escape" &&
+            ltChatIsOpen
+          ) {
+            ltCloseWindow();
+          }
+        }
+      );
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener(
+        "DOMContentLoaded",
+        ltInit
+      );
+    } else {
+      ltInit();
+    }
+  })();
+</script>
 </body>
 </html>
