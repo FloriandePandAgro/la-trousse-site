@@ -7,7 +7,7 @@ exports.handler = async (event) => {
   try {
     ({ email, firstName = '' } = JSON.parse(event.body));
   } catch {
-    return { statusCode: 400, body: JSON.stringify({ error: 'Corps de requête invalide' }) };
+    return { statusCode: 400, body: JSON.stringify({ error: 'Corps invalide' }) };
   }
 
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
@@ -15,6 +15,10 @@ exports.handler = async (event) => {
   }
 
   const apiKey = process.env.SIO_API_KEY;
+  if (!apiKey) {
+    console.error('SIO_API_KEY manquante');
+    return { statusCode: 500, body: JSON.stringify({ error: 'Config manquante' }) };
+  }
 
   try {
     const res = await fetch('https://api.systeme.io/api/contacts', {
@@ -30,19 +34,17 @@ exports.handler = async (event) => {
       }),
     });
 
+    const body = await res.text();
+    console.log('SIO status:', res.status, body);
+
+    // 200 = créé, 409 = déjà existant (les deux sont OK)
     if (res.ok || res.status === 409) {
-      return {
-        statusCode: 200,
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ success: true }),
-      };
+      return { statusCode: 200, body: JSON.stringify({ success: true }) };
     }
 
-    const err = await res.text();
-    console.error('SIO error:', err);
-    return { statusCode: 502, body: JSON.stringify({ error: 'Erreur Systeme.io' }) };
+    return { statusCode: 502, body: JSON.stringify({ error: 'Erreur Systeme.io', detail: body }) };
   } catch (e) {
-    console.error(e);
-    return { statusCode: 500, body: JSON.stringify({ error: 'Erreur serveur' }) };
+    console.error('Fetch error:', e);
+    return { statusCode: 500, body: JSON.stringify({ error: e.message }) };
   }
 };

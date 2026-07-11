@@ -147,8 +147,7 @@ button:disabled{opacity:.6;cursor:default;transform:none;}
         body:JSON.stringify({email:email, firstName:firstName}),
       });
       if(res.ok){
-        block.style.display = 'none';
-        ok.classList.add('show');
+        window.location.href = '/merci';
       } else { throw new Error(); }
     } catch(_){
       err.textContent = 'Une erreur s\'est produite. Réessaie dans quelques instants.';
