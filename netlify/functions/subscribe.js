@@ -1,3 +1,18 @@
+const https = require('https');
+
+function post(options, body) {
+  return new Promise((resolve, reject) => {
+    const req = https.request(options, (res) => {
+      let data = '';
+      res.on('data', (chunk) => { data += chunk; });
+      res.on('end', () => resolve({ status: res.statusCode, body: data }));
+    });
+    req.on('error', reject);
+    req.write(body);
+    req.end();
+  });
+}
+
 exports.handler = async (event) => {
   if (event.httpMethod !== 'POST') {
     return { statusCode: 405, body: 'Method Not Allowed' };
@@ -20,31 +35,34 @@ exports.handler = async (event) => {
     return { statusCode: 500, body: JSON.stringify({ error: 'Config manquante' }) };
   }
 
+  const payload = JSON.stringify({
+    email,
+    firstName,
+    tags: [{ name: 'La Trousse - Ressources' }],
+  });
+
+  const options = {
+    hostname: 'api.systeme.io',
+    path: '/api/contacts',
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Content-Length': Buffer.byteLength(payload),
+      'X-API-Key': apiKey,
+    },
+  };
+
   try {
-    const res = await fetch('https://api.systeme.io/api/contacts', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'X-API-Key': apiKey,
-      },
-      body: JSON.stringify({
-        email,
-        firstName,
-        tags: [{ name: 'La Trousse - Ressources' }],
-      }),
-    });
+    const res = await post(options, payload);
+    console.log('SIO status:', res.status, res.body);
 
-    const body = await res.text();
-    console.log('SIO status:', res.status, body);
-
-    // 200 = créé, 409 = déjà existant (les deux sont OK)
-    if (res.ok || res.status === 409) {
+    if (res.status === 200 || res.status === 201 || res.status === 409) {
       return { statusCode: 200, body: JSON.stringify({ success: true }) };
     }
 
-    return { statusCode: 502, body: JSON.stringify({ error: 'Erreur Systeme.io', detail: body }) };
+    return { statusCode: 502, body: JSON.stringify({ error: 'Erreur Systeme.io', detail: res.body }) };
   } catch (e) {
-    console.error('Fetch error:', e);
+    console.error('Erreur réseau:', e.message);
     return { statusCode: 500, body: JSON.stringify({ error: e.message }) };
   }
 };
