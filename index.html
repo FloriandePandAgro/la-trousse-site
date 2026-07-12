@@ -45,9 +45,9 @@ body{margin:0;padding:0;}
   opacity:0;animation:ltv-book-in .7s cubic-bezier(.34,1.28,.5,1) forwards;animation-delay:calc(var(--i) * .08s + .35s);}
 .ltv-hero-fan{cursor:pointer;}
 @media(hover:hover){
-  .ltv-hero-fan:hover .ltv-hero-book{transform:translateX(calc((var(--i) - 4) * 120px)) rotate(calc((var(--i) - 4) * 3deg)) translateY(-8px);}
+  .ltv-hero-fan:hover .ltv-hero-book{transform:translateX(calc((var(--i) - 4) * 210px)) rotate(calc((var(--i) - 4) * 4deg)) translateY(-20px);}
 }
-.ltv-hero-fan.ltv-fan-open .ltv-hero-book{transform:translateX(calc((var(--i) - 4) * 120px)) rotate(calc((var(--i) - 4) * 3deg)) translateY(-8px);}
+.ltv-hero-fan.ltv-fan-open .ltv-hero-book{transform:translateX(calc((var(--i) - 4) * 210px)) rotate(calc((var(--i) - 4) * 4deg)) translateY(-20px);}
 @keyframes ltv-book-in{from{opacity:0;transform:translateX(0) rotate(0deg) translateY(55px) scale(.82);}to{opacity:1;transform:translateX(calc((var(--i) - 4) * 106px)) rotate(calc((var(--i) - 4) * 5deg));}}
 @keyframes ltv-draw{to{stroke-dashoffset:0;}}
 @keyframes ltv-fade-up{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
