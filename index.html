@@ -39,10 +39,12 @@ body{margin:0;padding:0;}
 .ltv-hero-tag{font-size:17px;color:var(--navy2);font-weight:800;letter-spacing:.01em;opacity:0;animation:ltv-fade-up .6s ease-out .6s forwards;}
 
 .ltv-hero-fan{position:relative;height:330px;margin:50px auto 0;max-width:1000px;display:flex;justify-content:center;align-items:flex-end;}
-.ltv-hero-book{position:absolute;bottom:0;width:185px;height:auto;aspect-ratio:3/4;object-fit:contain;filter:drop-shadow(0 18px 26px rgba(30,45,90,.28));transform-origin:bottom center;
+.ltv-hero-book{position:absolute;bottom:0;width:185px;height:auto;aspect-ratio:3/4;display:block;text-decoration:none;
+  filter:drop-shadow(0 18px 26px rgba(30,45,90,.28));transform-origin:bottom center;
   transform:translateX(calc((var(--i) - 4) * 106px)) rotate(calc((var(--i) - 4) * 5deg));
   transition:transform .35s cubic-bezier(.22,.61,.36,1);
   opacity:0;animation:ltv-book-in .7s cubic-bezier(.34,1.28,.5,1) forwards;animation-delay:calc(var(--i) * .08s + .35s);}
+.ltv-hero-book img{width:100%;height:auto;display:block;object-fit:contain;}
 .ltv-hero-fan{cursor:pointer;}
 @media(hover:hover){
   .ltv-hero-fan:hover .ltv-hero-book{transform:translateX(calc((var(--i) - 4) * 210px)) rotate(calc((var(--i) - 4) * 4deg)) translateY(-20px);}
@@ -132,7 +134,6 @@ body{margin:0;padding:0;}
     gap:8px;
     max-width:100%;
     margin-top:24px;
-    cursor:default;
   }
   .ltv-hero-book{
     position:static;
@@ -190,7 +191,7 @@ body{margin:0;padding:0;}
       <h1>Un agenda qui comprend <em>vraiment votre métier</em></h1>
       <p class="ltv-hero-sub">Des agendas conçus avec des enseignants de terrain, une matière à la fois. Choisissez la vôtre et trouvez la couverture qui vous ressemble.</p>
       <p class="ltv-hero-tag">9 matières · Format A4 · Plus de 80 couvertures au choix</p>
-      <div class="ltv-hero-fan"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/1%20Agenda%20svt.png?width=600&quality=80" alt="Agenda SVT" class="ltv-hero-book" style="--i:0;" loading="eager"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/Agenda%20PC%201.png?width=600&quality=80" alt="Agenda Physique-Chimie" class="ltv-hero-book" style="--i:1;" loading="eager"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/Agenda%20Maths%201.png?width=600&quality=80" alt="Agenda Maths" class="ltv-hero-book" style="--i:2;" loading="eager"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/agenda%20Franc%CC%A7ais%201.png?width=600&quality=80" alt="Agenda Français" class="ltv-hero-book" style="--i:3;" loading="eager"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/agenda%20HG1.png?width=600&quality=80" alt="Agenda Histoire-Géo" class="ltv-hero-book" style="--i:4;" loading="eager"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/Agenda%20EPS%201.png?width=600&quality=80" alt="Agenda EPS" class="ltv-hero-book" style="--i:5;" loading="lazy" decoding="async"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/Agenda%20Espa%201.png?width=600&quality=80" alt="Agenda Espagnol" class="ltv-hero-book" style="--i:6;" loading="lazy" decoding="async"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/1%20Agenda%20prof%20college%20lycee%203D.png?width=600&quality=80" alt="Agenda Enseignant" class="ltv-hero-book" style="--i:7;" loading="lazy" decoding="async"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/Agenda%20Anglais%201.png?width=600&quality=80" alt="Agenda Anglais" class="ltv-hero-book" style="--i:8;" loading="lazy" decoding="async"></div>
+      <div class="ltv-hero-fan"><a href="/agendas/svt" class="ltv-hero-book" style="--i:0;"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/1%20Agenda%20svt.png?width=600&quality=80" alt="Agenda SVT" loading="eager"></a><a href="/agendas/physique-chimie" class="ltv-hero-book" style="--i:1;"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/Agenda%20PC%201.png?width=600&quality=80" alt="Agenda Physique-Chimie" loading="eager"></a><a href="/agendas/maths" class="ltv-hero-book" style="--i:2;"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/Agenda%20Maths%201.png?width=600&quality=80" alt="Agenda Maths" loading="eager"></a><a href="/agendas/francais" class="ltv-hero-book" style="--i:3;"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/agenda%20Franc%CC%A7ais%201.png?width=600&quality=80" alt="Agenda Français" loading="eager"></a><a href="/agendas/histoire-geographie" class="ltv-hero-book" style="--i:4;"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/agenda%20HG1.png?width=600&quality=80" alt="Agenda Histoire-Géo" loading="eager"></a><a href="/agendas/eps" class="ltv-hero-book" style="--i:5;"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/Agenda%20EPS%201.png?width=600&quality=80" alt="Agenda EPS" loading="lazy" decoding="async"></a><a href="/agendas/espagnol" class="ltv-hero-book" style="--i:6;"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/Agenda%20Espa%201.png?width=600&quality=80" alt="Agenda Espagnol" loading="lazy" decoding="async"></a><a href="/agendas/enseignant" class="ltv-hero-book" style="--i:7;"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/1%20Agenda%20prof%20college%20lycee%203D.png?width=600&quality=80" alt="Agenda Enseignant" loading="lazy" decoding="async"></a><a href="/agendas/anglais" class="ltv-hero-book" style="--i:8;"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/Agenda%20Anglais%201.png?width=600&quality=80" alt="Agenda Anglais" loading="lazy" decoding="async"></a></div>
     </div>
   </section>
 
@@ -1142,15 +1143,6 @@ body{margin:0;padding:0;}
      EMAILJS
      ============================================================ -->
 
-<script>
-(function(){
-  var fan = document.querySelector('.ltv-hero-fan');
-  if (!fan) return;
-  fan.addEventListener('click', function() {
-    this.classList.toggle('ltv-fan-open');
-  });
-})();
-</script>
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
 <script>
