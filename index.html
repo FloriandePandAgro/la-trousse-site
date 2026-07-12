@@ -47,6 +47,7 @@ body{margin:0;padding:0;}
 @keyframes ltv-book-in{from{opacity:0;transform:translateX(0) rotate(0deg) translateY(55px) scale(.82);}to{opacity:1;transform:translateX(calc((var(--i) - 4) * 106px)) rotate(calc((var(--i) - 4) * 5deg));}}
 @keyframes ltv-draw{to{stroke-dashoffset:0;}}
 @keyframes ltv-fade-up{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+@keyframes ltv-book-grid-in{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
 
 .ltv-sec{padding:80px 24px;max-width:1200px;margin:0 auto;}
 .ltv-head{text-align:center;max-width:640px;margin:0 auto 52px;}
@@ -122,8 +123,27 @@ body{margin:0;padding:0;}
   .ltv-hero{padding:52px 18px 44px;}
   .ltv-sec{padding:56px 18px;}
   .ltv-hero h1{font-size:clamp(1.9rem,8vw,2.4rem);}
-  .ltv-hero-fan{height:170px;}
-  .ltv-hero-book{width:86px;transform:translateX(calc((var(--i) - 4) * 40px)) rotate(calc((var(--i) - 4) * 5deg));}
+  /* Livres : grille 2 lignes au lieu du fan */
+  .ltv-hero-fan{
+    height:auto;
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:8px;
+    max-width:100%;
+    margin-top:24px;
+  }
+  .ltv-hero-book{
+    position:static;
+    width:100%;
+    filter:drop-shadow(0 3px 8px rgba(30,45,90,.18));
+    animation-name:ltv-book-grid-in;
+    transform-origin:center;
+  }
+  .ltv-hero-fan:hover .ltv-hero-book,
+  .ltv-hero-fan:active .ltv-hero-book{
+    transform:none;
+  }
+  .ltv-hero-book:active{transform:scale(.95);}
 }
 @media(prefers-reduced-motion:reduce){
   .ltv-hero-book,.ltv-eyebrow,.ltv-hero h1,.ltv-hero-sub,.ltv-hero-tag,.ltv-tile{animation:none!important;opacity:1!important;}
