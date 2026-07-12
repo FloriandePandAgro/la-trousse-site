@@ -43,7 +43,11 @@ body{margin:0;padding:0;}
   transform:translateX(calc((var(--i) - 4) * 106px)) rotate(calc((var(--i) - 4) * 5deg));
   transition:transform .35s cubic-bezier(.22,.61,.36,1);
   opacity:0;animation:ltv-book-in .7s cubic-bezier(.34,1.28,.5,1) forwards;animation-delay:calc(var(--i) * .08s + .35s);}
-.ltv-hero-fan:hover .ltv-hero-book{transform:translateX(calc((var(--i) - 4) * 120px)) rotate(calc((var(--i) - 4) * 3deg)) translateY(-8px);}
+.ltv-hero-fan{cursor:pointer;}
+@media(hover:hover){
+  .ltv-hero-fan:hover .ltv-hero-book{transform:translateX(calc((var(--i) - 4) * 120px)) rotate(calc((var(--i) - 4) * 3deg)) translateY(-8px);}
+}
+.ltv-hero-fan.ltv-fan-open .ltv-hero-book{transform:translateX(calc((var(--i) - 4) * 120px)) rotate(calc((var(--i) - 4) * 3deg)) translateY(-8px);}
 @keyframes ltv-book-in{from{opacity:0;transform:translateX(0) rotate(0deg) translateY(55px) scale(.82);}to{opacity:1;transform:translateX(calc((var(--i) - 4) * 106px)) rotate(calc((var(--i) - 4) * 5deg));}}
 @keyframes ltv-draw{to{stroke-dashoffset:0;}}
 @keyframes ltv-fade-up{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
@@ -117,13 +121,8 @@ body{margin:0;padding:0;}
 @media(max-width:640px){
   .ltv-hero h1 em{white-space:normal;}
 }
-@media(max-width:560px){
-  .ltv-grid{grid-template-columns:1fr;}
-  .ltv-trust-in{grid-template-columns:1fr;}
-  .ltv-hero{padding:52px 18px 44px;}
-  .ltv-sec{padding:56px 18px;}
-  .ltv-hero h1{font-size:clamp(1.9rem,8vw,2.4rem);}
-  /* Livres : grille 2 lignes au lieu du fan */
+@media(max-width:768px){
+  /* Livres hero : grille 2 lignes, plus de fan qui déborde */
   .ltv-hero-fan{
     height:auto;
     display:grid;
@@ -131,6 +130,7 @@ body{margin:0;padding:0;}
     gap:8px;
     max-width:100%;
     margin-top:24px;
+    cursor:default;
   }
   .ltv-hero-book{
     position:static;
@@ -139,11 +139,19 @@ body{margin:0;padding:0;}
     animation-name:ltv-book-grid-in;
     transform-origin:center;
   }
-  .ltv-hero-fan:hover .ltv-hero-book,
-  .ltv-hero-fan:active .ltv-hero-book{
-    transform:none;
+  .ltv-hero-fan .ltv-hero-book,
+  .ltv-hero-fan.ltv-fan-open .ltv-hero-book{
+    transform:none !important;
   }
-  .ltv-hero-book:active{transform:scale(.95);}
+  .ltv-hero-book:active{transform:scale(.95) !important;}
+}
+@media(max-width:560px){
+  .ltv-grid{grid-template-columns:1fr;}
+  .ltv-trust-in{grid-template-columns:1fr;}
+  .ltv-hero{padding:52px 18px 44px;}
+  .ltv-sec{padding:56px 18px;}
+  .ltv-hero h1{font-size:clamp(1.9rem,8vw,2.4rem);}
+  .ltv-hero-fan{gap:6px;}
 }
 @media(prefers-reduced-motion:reduce){
   .ltv-hero-book,.ltv-eyebrow,.ltv-hero h1,.ltv-hero-sub,.ltv-hero-tag,.ltv-tile{animation:none!important;opacity:1!important;}
@@ -153,11 +161,11 @@ body{margin:0;padding:0;}
 <meta property="og:url" content="https://www.la-trousse.fr">
 <meta property="og:title" content="Agendas Prof 2026-2027 : 9 matières | La Trousse">
 <meta property="og:description" content="Des agendas pensés pour les profs : SVT, maths, français, physique-chimie, EPS, histoire-géo, espagnol, anglais, enseignant.">
-<meta property="og:image" content="https://images.pandagro-svt.fr/Images%20agendas%20la%20trousse/logo%20sans%20fond%20la%20trousse.png">
+<meta property="og:image" content="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/Vue%20panarama%20agendas%20senseignants%20college%20lycee%20sans%20fond.png?width=1200&quality=75">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://images.pandagro-svt.fr/Images%20agendas%20la%20trousse/logo%20sans%20fond%20la%20trousse.png">
+<meta name="twitter:image" content="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/Vue%20panarama%20agendas%20senseignants%20college%20lycee%20sans%20fond.png?width=1200&quality=75">
 </head>
 <body>
 <div class="ltv">
@@ -1132,6 +1140,15 @@ body{margin:0;padding:0;}
      EMAILJS
      ============================================================ -->
 
+<script>
+(function(){
+  var fan = document.querySelector('.ltv-hero-fan');
+  if (!fan) return;
+  fan.addEventListener('click', function() {
+    this.classList.toggle('ltv-fan-open');
+  });
+})();
+</script>
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
 <script>
