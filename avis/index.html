@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Laisser un avis sur mon agenda | La Trousse</title>
+<meta name="description" content="Sélectionne ta matière, retrouve ta couverture et laisse un avis Amazon en 2 clics.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="https://images.pandagro-svt.fr/Images%20agendas%20la%20trousse/logo%20flavicon%20la%20trousse%20en%20flavicon%20la%20trousse%20en%20blanc%20sur%20fond%20bleu%20sans%20fond.png">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{
+  font-family:'Nunito Sans',system-ui,Arial,sans-serif;
+  background:#eff2f9;
+  --navy:#1e2d5a;--navy2:#2a3d6f;--navy-ink:#16213f;
+  --accent:#3d5fc4;--line:#e3e8f2;--muted:#5f6c8a;
+}
+
+.rv-header{
+  background:#fff;
+  border-bottom:1px solid var(--line);
+  padding:14px 24px;
+}
+.rv-logo{height:36px;width:auto;display:block;}
+
+.rv-hero{
+  text-align:center;
+  padding:44px 20px 28px;
+  max-width:560px;
+  margin:0 auto;
+}
+.rv-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  color:var(--accent);font-size:11px;font-weight:800;
+  letter-spacing:.13em;text-transform:uppercase;margin-bottom:14px;
+}
+.rv-eyebrow::before,.rv-eyebrow::after{content:'';width:18px;height:2px;background:var(--accent);border-radius:2px;}
+.rv-hero h1{
+  font-family:'Baloo 2',cursive;font-weight:800;
+  color:var(--navy-ink);font-size:clamp(1.65rem,4.5vw,2.1rem);
+  line-height:1.15;margin-bottom:10px;
+}
+.rv-hero h1 em{font-style:normal;color:var(--accent);}
+.rv-sub{font-size:.93rem;color:var(--muted);line-height:1.6;}
+
+.rv-steps{
+  display:flex;justify-content:center;gap:8px;
+  margin-top:18px;flex-wrap:wrap;
+}
+.rv-step{
+  background:#fff;border:1.5px solid var(--line);border-radius:10px;
+  padding:8px 16px;font-size:.82rem;font-weight:700;color:var(--muted);
+  display:flex;align-items:center;gap:6px;
+}
+.rv-step-n{
+  width:20px;height:20px;border-radius:50%;
+  background:var(--navy);color:#fff;
+  font-size:.72rem;font-weight:800;
+  display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+
+/* TABS */
+.rv-tabs-outer{
+  padding:4px 16px 24px;
+  overflow-x:auto;
+  scrollbar-width:none;
+  -webkit-overflow-scrolling:touch;
+}
+.rv-tabs-outer::-webkit-scrollbar{display:none;}
+.rv-tabs{
+  display:flex;gap:8px;
+  justify-content:center;
+  flex-wrap:wrap;
+  max-width:860px;
+  margin:0 auto;
+}
+.rv-tab{
+  padding:10px 18px;
+  border:2px solid var(--line);
+  border-radius:999px;
+  background:#fff;
+  font-family:'Nunito Sans',sans-serif;
+  font-size:.9rem;font-weight:700;
+  color:var(--muted);
+  cursor:pointer;
+  transition:border-color .15s,color .15s,background .15s,box-shadow .15s;
+  white-space:nowrap;
+  line-height:1;
+}
+.rv-tab:hover{border-color:var(--accent);color:var(--accent);}
+.rv-tab.active{
+  background:var(--navy);
+  border-color:var(--navy);
+  color:#fff;
+  box-shadow:0 4px 14px rgba(30,45,90,.22);
+}
+
+/* CONTENT */
+.rv-content{max-width:980px;margin:0 auto;padding:0 16px 72px;}
+
+.rv-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+}
+
+.rv-card{
+  display:block;
+  background:#fff;
+  border-radius:16px;
+  overflow:hidden;
+  text-decoration:none;
+  box-shadow:0 3px 12px rgba(30,45,90,.09);
+  border:2px solid transparent;
+  transition:transform .18s,box-shadow .18s,border-color .18s;
+  position:relative;
+}
+.rv-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 14px 36px rgba(30,45,90,.17);
+  border-color:var(--accent);
+}
+.rv-card-img{
+  width:100%;
+  aspect-ratio:3/4;
+  object-fit:contain;
+  display:block;
+  background:#f6f8fc;
+  padding:8px;
+}
+.rv-card-foot{
+  padding:10px 12px 12px;
+  text-align:center;
+  border-top:1px solid var(--line);
+}
+.rv-cta{
+  display:inline-flex;align-items:center;gap:5px;
+  background:var(--navy);color:#fff;
+  border-radius:8px;padding:7px 14px;
+  font-size:.82rem;font-weight:800;
+  transition:background .15s;
+  line-height:1;
+}
+.rv-card:hover .rv-cta{background:var(--accent);}
+
+/* SOON */
+.rv-soon{
+  text-align:center;padding:56px 24px;
+  color:var(--muted);
+}
+.rv-soon-icon{font-size:44px;margin-bottom:14px;}
+.rv-soon h3{font-family:'Baloo 2',cursive;color:var(--navy-ink);font-size:1.3rem;font-weight:700;margin-bottom:8px;}
+.rv-soon p{font-size:.93rem;line-height:1.6;}
+
+/* RESPONSIVE */
+@media(max-width:760px){
+  .rv-tabs{flex-wrap:nowrap;justify-content:flex-start;}
+  .rv-grid{grid-template-columns:repeat(3,1fr);gap:10px;}
+}
+@media(max-width:500px){
+  .rv-grid{grid-template-columns:repeat(2,1fr);gap:8px;}
+  .rv-hero{padding:28px 16px 20px;}
+  .rv-card-img{padding:4px;}
+  .rv-cta{font-size:.78rem;padding:6px 10px;}
+}
+</style>
+</head>
+<body>
+
+<header class="rv-header">
+  <a href="https://www.la-trousse.fr">
+    <img src="https://images.pandagro-svt.fr/Images%20agendas%20la%20trousse/logo%20sans%20fond%20la%20trousse.png" alt="La Trousse" class="rv-logo">
+  </a>
+</header>
+
+<div class="rv-hero">
+  <div class="rv-eyebrow">Ton avis compte</div>
+  <h1>Quel agenda <em>as-tu ?</em></h1>
+  <p class="rv-sub">Sélectionne ta matière, retrouve ta couverture et laisse un avis en 2 clics. Merci !</p>
+  <div class="rv-steps">
+    <div class="rv-step"><span class="rv-step-n">1</span> Choisis ta matière</div>
+    <div class="rv-step"><span class="rv-step-n">2</span> Clique sur ta couverture</div>
+    <div class="rv-step"><span class="rv-step-n">3</span> Laisse ton avis ⭐</div>
+  </div>
+</div>
+
+<div class="rv-tabs-outer">
+  <div class="rv-tabs" id="rv-tabs">
+    <button class="rv-tab active" data-s="svt">🔬 SVT</button>
+    <button class="rv-tab" data-s="maths">📐 Maths</button>
+    <button class="rv-tab" data-s="pc">⚗️ Physique-Chimie</button>
+    <button class="rv-tab" data-s="francais">📖 Français</button>
+    <button class="rv-tab" data-s="hg">🌍 Histoire-Géo</button>
+    <button class="rv-tab" data-s="eps">⚽ EPS</button>
+    <button class="rv-tab" data-s="espagnol">🇪🇸 Espagnol</button>
+    <button class="rv-tab" data-s="anglais">🇬🇧 Anglais</button>
+    <button class="rv-tab" data-s="enseignant">📋 Enseignant</button>
+  </div>
+</div>
+
+<div class="rv-content" id="rv-content"></div>
+
+<script>
+var R = 'https://www.amazon.fr/review/create-review/ref=cm_cr_othr_d_wr_but_top?ie=UTF8&channel=glance-detail&asin=';
+var CDN = 'https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/';
+
+var SUBJECTS = {
+  svt: {
+    name: 'SVT',
+    items: [
+      { img: 'https://d1yei2z3i6k35z.cloudfront.net/875960/6a11c5d136b4f4.23563996_4.png',           asin: 'B0D7YSBP7H' },
+      { img: 'https://d1yei2z3i6k35z.cloudfront.net/875960/6a124db0cf03d0.43370434_Couvertureagenda5.png', asin: 'B0H4139XYM' },
+      { img: 'https://d1yei2z3i6k35z.cloudfront.net/875960/6a11c58a605404.10722208_1.png',           asin: 'B0H4QFCN8L' },
+      { img: 'https://d1yei2z3i6k35z.cloudfront.net/875960/6a11c5b6e88485.29779467_3.png',           asin: 'B0H4145VD3' },
+      { img: 'https://d1yei2z3i6k35z.cloudfront.net/875960/6a11c6119b2537.79239922_6.png',           asin: 'B0H412B89Z' },
+      { img: 'https://d1yei2z3i6k35z.cloudfront.net/875960/6a11c59e34c818.42831696_2.png',           asin: 'B0H41BZFPS' },
+      { img: 'https://d1yei2z3i6k35z.cloudfront.net/875960/6a11c5f4359ce3.18533656_5.png',           asin: 'B0H4FVYCR6' },
+      { img: CDN + '8%20Agenda%20svt.png?width=400&quality=80',  asin: 'B0H6KNWYZC' },
+      { img: CDN + '9%20Agenda%20svt.png?width=400&quality=80',  asin: 'B0H6YHGJZ8' },
+      { img: CDN + '10%20Agenda%20svt.png?width=400&quality=80', asin: 'B0H72CSLZ9' },
+      { img: CDN + '11%20Agenda%20svt.png?width=400&quality=80', asin: 'B0H741RT7G' },
+      { img: CDN + '12%20Agenda%20svt.png?width=400&quality=80', asin: 'B0H6H8J3J2' },
+      { img: CDN + '13%20Agenda%20svt.png?width=400&quality=80', asin: 'B0H83V1PLX' },
+      { img: CDN + '14%20Agenda%20svt.png?width=400&quality=80', asin: 'B0H6KLVBDS' },
+      { img: CDN + '15%20Agenda%20svt.png?width=400&quality=80', asin: 'B0H6KN2X2Q' },
+      { img: CDN + '16%20Agenda%20svt.png?width=400&quality=80', asin: 'B0H6QTFQFG' },
+      { img: CDN + '17%20Agenda%20svt.png?width=400&quality=80', asin: 'B0H6YKZTJ3' },
+      { img: CDN + '18%20Agenda%20svt.png?width=400&quality=80', asin: 'B0H6YMWXBY' }
+    ]
+  },
+  maths:      { name: 'Maths',            items: [] },
+  pc:         { name: 'Physique-Chimie',  items: [] },
+  francais:   { name: 'Français',         items: [] },
+  hg:         { name: 'Histoire-Géo',     items: [] },
+  eps:        { name: 'EPS',              items: [] },
+  espagnol:   { name: 'Espagnol',         items: [] },
+  anglais:    { name: 'Anglais',          items: [] },
+  enseignant: { name: 'Enseignant',       items: [] }
+};
+
+function render(key) {
+  var s = SUBJECTS[key];
+  var el = document.getElementById('rv-content');
+  if (!s || !s.items.length) {
+    el.innerHTML = '<div class="rv-soon"><div class="rv-soon-icon">⏳</div><h3>Bientôt disponible</h3><p>Les agendas ' + (s ? s.name : '') + ' arrivent prochainement sur cette page.</p></div>';
+    return;
+  }
+  var cards = s.items.map(function(it, i) {
+    return '<a class="rv-card" href="' + R + it.asin + '" target="_blank" rel="noopener noreferrer">'
+      + '<img class="rv-card-img" src="' + it.img + '" alt="Agenda ' + s.name + ' ' + (i+1) + '" loading="' + (i < 8 ? 'eager' : 'lazy') + '">'
+      + '<div class="rv-card-foot"><span class="rv-cta">⭐ Écrire mon avis</span></div>'
+      + '</a>';
+  }).join('');
+  el.innerHTML = '<div class="rv-grid">' + cards + '</div>';
+}
+
+document.getElementById('rv-tabs').addEventListener('click', function(e) {
+  var btn = e.target.closest('.rv-tab');
+  if (!btn) return;
+  document.querySelectorAll('.rv-tab').forEach(function(t){t.classList.remove('active');});
+  btn.classList.add('active');
+  render(btn.dataset.s);
+});
+
+render('svt');
+</script>
+</body>
+</html>
