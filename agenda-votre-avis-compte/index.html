@@ -264,7 +264,10 @@ document.getElementById('rv-tabs').addEventListener('click', function(e) {
   render(btn.dataset.s);
 });
 
-render('svt');
+var _m = new URLSearchParams(window.location.search).get('m');
+var _init = (_m && SUBJECTS[_m]) ? _m : 'svt';
+document.querySelectorAll('.rv-tab').forEach(function(t){ t.classList.toggle('active', t.dataset.s === _init); });
+render(_init);
 </script>
 </body>
 </html>

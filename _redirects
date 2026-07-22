@@ -1,2 +1,13 @@
 /merci    /merci/index.html    200
+
+/avis/svt          /agenda-votre-avis-compte/?m=svt          302
+/avis/maths        /agenda-votre-avis-compte/?m=maths        302
+/avis/pc           /agenda-votre-avis-compte/?m=pc           302
+/avis/francais     /agenda-votre-avis-compte/?m=francais     302
+/avis/hg           /agenda-votre-avis-compte/?m=hg           302
+/avis/eps          /agenda-votre-avis-compte/?m=eps          302
+/avis/espagnol     /agenda-votre-avis-compte/?m=espagnol     302
+/avis/anglais      /agenda-votre-avis-compte/?m=anglais      302
+/avis/enseignant   /agenda-votre-avis-compte/?m=enseignant   302
+
 /*        /                   302
