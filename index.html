@@ -4,11 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Agendas Prof 2026-2027 : 9 matières | La Trousse</title>
-<meta name="description" content="Des agendas pensés pour les profs : SVT, maths, français, physique-chimie, EPS, histoire-géo, espagnol… Choisissez votre matière. Format A4, dès 11,55 €.">
+<meta name="description" content="Des agendas pensés pour les profs : SVT, maths, français, physique-chimie, EPS, histoire-géo, espagnol… Choisissez votre matière. Format A4, dès 11,99 €.">
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://pandagro.b-cdn.net" crossorigin>
-<link rel="preconnect" href="https://images.pandagro-svt.fr" crossorigin>
-<link rel="icon" type="image/png" href="https://images.pandagro-svt.fr/Images%20agendas%20la%20trousse/logo%20flavicon%20la%20trousse%20en%20flavicon%20la%20trousse%20en%20blanc%20sur%20fond%20bleu%20sans%20fond.png">
+<link rel="icon" type="image/png" href="/img/logo-flavicon-la-trousse-en-flavicon-la-trousse-en-blanc-sur-fond-bleu-sans-fond.png">
 
 <style>
 body{margin:0;padding:0;}
@@ -115,7 +113,11 @@ body{margin:0;padding:0;}
 @media(max-width:900px){
   .ltv-grid{grid-template-columns:repeat(2,1fr);}
   .ltv-trust-in{grid-template-columns:repeat(2,1fr);}
-  .ltv-nav-links{display:none;}
+  /* Les liens ne sont PAS masqués : c'était le seul chemin vers le blog sur
+     mobile, et il disparaissait complètement. Ils passent sous le logo. */
+  .ltv-nav-in{flex-wrap:wrap;justify-content:center;gap:6px 10px;}
+  .ltv-nav-links{gap:2px;width:100%;justify-content:center;}
+  .ltv-nav-links a{padding:6px 10px;font-size:13px;}
   .ltv-hero-book{width:120px;transform:translateX(calc((var(--i) - 4) * 62px)) rotate(calc((var(--i) - 4) * 5deg));}
   .ltv-hero-fan{height:230px;}
   @keyframes ltv-book-in{from{opacity:0;transform:translateX(0) rotate(0deg) translateY(40px) scale(.82);}to{opacity:1;transform:translateX(calc((var(--i) - 4) * 62px)) rotate(calc((var(--i) - 4) * 5deg));}}
@@ -164,23 +166,24 @@ body{margin:0;padding:0;}
 <meta property="og:url" content="https://www.la-trousse.fr">
 <meta property="og:title" content="Agendas Prof 2026-2027 : 9 matières | La Trousse">
 <meta property="og:description" content="Des agendas pensés pour les profs : SVT, maths, français, physique-chimie, EPS, histoire-géo, espagnol, anglais, enseignant.">
-<meta property="og:image" content="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/Vue%20panarama%20agendas%20senseignants%20college%20lycee%20sans%20fond.png?width=1200&quality=75">
+<meta property="og:image" content="https://www.la-trousse.fr/img/vue-panarama-agendas-senseignants-college-lycee-sans-fond.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/Vue%20panarama%20agendas%20senseignants%20college%20lycee%20sans%20fond.png?width=1200&quality=75">
+<meta name="twitter:image" content="https://www.la-trousse.fr/img/vue-panarama-agendas-senseignants-college-lycee-sans-fond.png">
 </head>
 <body>
 <div class="ltv">
 
-  <div class="ltv-top">📓 Agendas 2026-2027 pour enseignants — <strong>9 matières, dès 11,55 €</strong></div>
+  <div class="ltv-top">📓 Agendas 2026-2027 pour enseignants — <strong>9 matières, dès 11,99 €</strong></div>
 
   <div class="ltv-nav">
     <div class="ltv-nav-in">
-      <a class="ltv-logo" href="https://www.la-trousse.fr"><img src="https://images.pandagro-svt.fr/Images%20agendas%20la%20trousse/logo%20sans%20fond%20la%20trousse.png" alt="La Trousse"></a>
+      <a class="ltv-logo" href="https://www.la-trousse.fr"><img src="/img/logo-sans-fond-la-trousse.png" alt="La Trousse"></a>
       <div class="ltv-nav-links">
         <a href="#matieres">Les agendas</a>
         <a href="#pourquoi">Pourquoi La Trousse</a>
+        <a href="/blog/">Le blog</a>
       </div>
     </div>
   </div>
@@ -191,7 +194,7 @@ body{margin:0;padding:0;}
       <h1>Un agenda qui comprend <em>vraiment votre métier</em></h1>
       <p class="ltv-hero-sub">Des agendas conçus avec des enseignants de terrain, une matière à la fois. Choisissez la vôtre et trouvez la couverture qui vous ressemble.</p>
       <p class="ltv-hero-tag">9 matières · Format A4 · Plus de 80 couvertures au choix</p>
-      <div class="ltv-hero-fan"><a href="/agendas/svt" class="ltv-hero-book" style="--i:0;"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/1%20Agenda%20svt.png?width=600&quality=80" alt="Agenda SVT" loading="eager"></a><a href="/agendas/physique-chimie" class="ltv-hero-book" style="--i:1;"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/Agenda%20PC%201.png?width=600&quality=80" alt="Agenda Physique-Chimie" loading="eager"></a><a href="/agendas/maths" class="ltv-hero-book" style="--i:2;"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/Agenda%20Maths%201.png?width=600&quality=80" alt="Agenda Maths" loading="eager"></a><a href="/agendas/francais" class="ltv-hero-book" style="--i:3;"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/agenda%20Franc%CC%A7ais%201.png?width=600&quality=80" alt="Agenda Français" loading="eager"></a><a href="/agendas/histoire-geographie" class="ltv-hero-book" style="--i:4;"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/agenda%20HG1.png?width=600&quality=80" alt="Agenda Histoire-Géo" loading="eager"></a><a href="/agendas/eps" class="ltv-hero-book" style="--i:5;"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/Agenda%20EPS%201.png?width=600&quality=80" alt="Agenda EPS" loading="lazy" decoding="async"></a><a href="/agendas/espagnol" class="ltv-hero-book" style="--i:6;"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/Agenda%20Espa%201.png?width=600&quality=80" alt="Agenda Espagnol" loading="lazy" decoding="async"></a><a href="/agendas/enseignant" class="ltv-hero-book" style="--i:7;"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/1%20Agenda%20prof%20college%20lycee%203D.png?width=600&quality=80" alt="Agenda Enseignant" loading="lazy" decoding="async"></a><a href="/agendas/anglais" class="ltv-hero-book" style="--i:8;"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/Agenda%20Anglais%201.png?width=600&quality=80" alt="Agenda Anglais" loading="lazy" decoding="async"></a></div>
+      <div class="ltv-hero-fan"><a href="/agendas/svt" class="ltv-hero-book" style="--i:0;"><img src="/img/1-agenda-svt-v2.png" alt="Agenda SVT" loading="eager"></a><a href="/agendas/physique-chimie" class="ltv-hero-book" style="--i:1;"><img src="/img/agenda-pc-1.png" alt="Agenda Physique-Chimie" loading="eager"></a><a href="/agendas/maths" class="ltv-hero-book" style="--i:2;"><img src="/img/agenda-maths-1.png" alt="Agenda Maths" loading="eager"></a><a href="/agendas/francais" class="ltv-hero-book" style="--i:3;"><img src="/img/agenda-francais-1-v2.png" alt="Agenda Français" loading="eager"></a><a href="/agendas/histoire-geographie" class="ltv-hero-book" style="--i:4;"><img src="/img/hg-classique-1.png" alt="Agenda Histoire-Géo" loading="eager"></a><a href="/agendas/eps" class="ltv-hero-book" style="--i:5;"><img src="/img/agenda-eps-1.png" alt="Agenda EPS" loading="lazy" decoding="async"></a><a href="/agendas/espagnol" class="ltv-hero-book" style="--i:6;"><img src="/img/agenda-espa-1-v2.png" alt="Agenda Espagnol" loading="lazy" decoding="async"></a><a href="/agendas/enseignant" class="ltv-hero-book" style="--i:7;"><img src="/img/1-agenda-prof-college-lycee-3d-v4.png" alt="Agenda Enseignant" loading="lazy" decoding="async"></a><a href="/agendas/anglais" class="ltv-hero-book" style="--i:8;"><img src="/img/agenda-anglais-1.png" alt="Agenda Anglais" loading="lazy" decoding="async"></a></div>
     </div>
   </section>
 
@@ -203,39 +206,39 @@ body{margin:0;padding:0;}
     </div>
     <div class="ltv-grid">
       <a class="ltv-tile" href="https://www.la-trousse.fr/agendas/svt" style="--accent:#2a7d6f;">
-        <div class="ltv-fan"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/1%20Agenda%20svt.png?width=600&quality=80" alt="Agenda SVT 1" class="ltv-fan-img ltv-fan-1" loading="lazy" decoding="async"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/5%20Agenda%20svt.png?width=600&quality=80" alt="Agenda SVT 2" class="ltv-fan-img ltv-fan-2" loading="lazy" decoding="async"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/12%20Agenda%20svt.png?width=600&quality=80" alt="Agenda SVT 3" class="ltv-fan-img ltv-fan-3" loading="lazy" decoding="async"></div>
+        <div class="ltv-fan"><img src="/img/1-agenda-svt-v2.png" alt="Agenda SVT 1" class="ltv-fan-img ltv-fan-1" loading="lazy" decoding="async"><img src="/img/5-agenda-svt-v2.png" alt="Agenda SVT 2" class="ltv-fan-img ltv-fan-2" loading="lazy" decoding="async"><img src="/img/12-agenda-svt-v2.png" alt="Agenda SVT 3" class="ltv-fan-img ltv-fan-3" loading="lazy" decoding="async"></div>
         <div class="ltv-tile-foot"><span class="ltv-tile-name">SVT</span><span class="ltv-tile-go" aria-hidden="true">→</span></div>
       </a>
       <a class="ltv-tile" href="https://www.la-trousse.fr/agendas/physique-chimie" style="--accent:#3d5fc4;">
-        <div class="ltv-fan"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/Agenda%20PC%201.png?width=600&quality=80" alt="Agenda Physique-Chimie 1" class="ltv-fan-img ltv-fan-1" loading="lazy" decoding="async"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/Agenda%20PC%203.png?width=600&quality=80" alt="Agenda Physique-Chimie 2" class="ltv-fan-img ltv-fan-2" loading="lazy" decoding="async"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/Agenda%20PC%205.png?width=600&quality=80" alt="Agenda Physique-Chimie 3" class="ltv-fan-img ltv-fan-3" loading="lazy" decoding="async"></div>
+        <div class="ltv-fan"><img src="/img/agenda-pc-1.png" alt="Agenda Physique-Chimie 1" class="ltv-fan-img ltv-fan-1" loading="lazy" decoding="async"><img src="/img/agenda-pc-3.png" alt="Agenda Physique-Chimie 2" class="ltv-fan-img ltv-fan-2" loading="lazy" decoding="async"><img src="/img/agenda-pc-5.png" alt="Agenda Physique-Chimie 3" class="ltv-fan-img ltv-fan-3" loading="lazy" decoding="async"></div>
         <div class="ltv-tile-foot"><span class="ltv-tile-name">Physique-Chimie</span><span class="ltv-tile-go" aria-hidden="true">→</span></div>
       </a>
       <a class="ltv-tile" href="https://www.la-trousse.fr/agendas/maths" style="--accent:#b8860b;">
-        <div class="ltv-fan"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/Agenda%20Maths%201.png?width=600&quality=80" alt="Agenda Maths 1" class="ltv-fan-img ltv-fan-1" loading="lazy" decoding="async"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/Agenda%20Maths%204.png?width=600&quality=80" alt="Agenda Maths 2" class="ltv-fan-img ltv-fan-2" loading="lazy" decoding="async"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/Agenda%20Maths%207.png?width=600&quality=80" alt="Agenda Maths 3" class="ltv-fan-img ltv-fan-3" loading="lazy" decoding="async"></div>
+        <div class="ltv-fan"><img src="/img/agenda-maths-1.png" alt="Agenda Maths 1" class="ltv-fan-img ltv-fan-1" loading="lazy" decoding="async"><img src="/img/agenda-maths-4.png" alt="Agenda Maths 2" class="ltv-fan-img ltv-fan-2" loading="lazy" decoding="async"><img src="/img/agenda-maths-7.png" alt="Agenda Maths 3" class="ltv-fan-img ltv-fan-3" loading="lazy" decoding="async"></div>
         <div class="ltv-tile-foot"><span class="ltv-tile-name">Maths</span><span class="ltv-tile-go" aria-hidden="true">→</span></div>
       </a>
       <a class="ltv-tile" href="https://www.la-trousse.fr/agendas/francais" style="--accent:#a23b5e;">
-        <div class="ltv-fan"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/agenda%20Franc%CC%A7ais%201.png?width=600&quality=80" alt="Agenda Français 1" class="ltv-fan-img ltv-fan-1" loading="lazy" decoding="async"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/agenda%20Franc%CC%A7ais%203.png?width=600&quality=80" alt="Agenda Français 2" class="ltv-fan-img ltv-fan-2" loading="lazy" decoding="async"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/agenda%20Franc%CC%A7ais%205.png?width=600&quality=80" alt="Agenda Français 3" class="ltv-fan-img ltv-fan-3" loading="lazy" decoding="async"></div>
+        <div class="ltv-fan"><img src="/img/agenda-francais-1-v2.png" alt="Agenda Français 1" class="ltv-fan-img ltv-fan-1" loading="lazy" decoding="async"><img src="/img/agenda-francais-3-v2.png" alt="Agenda Français 2" class="ltv-fan-img ltv-fan-2" loading="lazy" decoding="async"><img src="/img/agenda-francais-5-v2.png" alt="Agenda Français 3" class="ltv-fan-img ltv-fan-3" loading="lazy" decoding="async"></div>
         <div class="ltv-tile-foot"><span class="ltv-tile-name">Français</span><span class="ltv-tile-go" aria-hidden="true">→</span></div>
       </a>
       <a class="ltv-tile" href="https://www.la-trousse.fr/agendas/histoire-geographie" style="--accent:#9c6b2e;">
-        <div class="ltv-fan"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/agenda%20HG1.png?width=600&quality=80" alt="Agenda Histoire-Géo 1" class="ltv-fan-img ltv-fan-1" loading="lazy" decoding="async"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/agenda%20HG3.png?width=600&quality=80" alt="Agenda Histoire-Géo 2" class="ltv-fan-img ltv-fan-2" loading="lazy" decoding="async"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/agenda%20HG5.png?width=600&quality=80" alt="Agenda Histoire-Géo 3" class="ltv-fan-img ltv-fan-3" loading="lazy" decoding="async"></div>
+        <div class="ltv-fan"><img src="/img/hg-classique-1.png" alt="Agenda Histoire-Géo 1" class="ltv-fan-img ltv-fan-1" loading="lazy" decoding="async"><img src="/img/hg-classique-3.png" alt="Agenda Histoire-Géo 2" class="ltv-fan-img ltv-fan-2" loading="lazy" decoding="async"><img src="/img/hg-mytho-3.png" alt="Agenda Histoire-Géo 3" class="ltv-fan-img ltv-fan-3" loading="lazy" decoding="async"></div>
         <div class="ltv-tile-foot"><span class="ltv-tile-name">Histoire-Géo</span><span class="ltv-tile-go" aria-hidden="true">→</span></div>
       </a>
       <a class="ltv-tile" href="https://www.la-trousse.fr/agendas/eps" style="--accent:#2f7d94;">
-        <div class="ltv-fan"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/Agenda%20EPS%201.png?width=600&quality=80" alt="Agenda EPS 1" class="ltv-fan-img ltv-fan-1" loading="lazy" decoding="async"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/Agenda%20EPS%203.png?width=600&quality=80" alt="Agenda EPS 2" class="ltv-fan-img ltv-fan-2" loading="lazy" decoding="async"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/Agenda%20EPS%205.png?width=600&quality=80" alt="Agenda EPS 3" class="ltv-fan-img ltv-fan-3" loading="lazy" decoding="async"></div>
+        <div class="ltv-fan"><img src="/img/agenda-eps-1.png" alt="Agenda EPS 1" class="ltv-fan-img ltv-fan-1" loading="lazy" decoding="async"><img src="/img/agenda-eps-3.png" alt="Agenda EPS 2" class="ltv-fan-img ltv-fan-2" loading="lazy" decoding="async"><img src="/img/agenda-eps-5.png" alt="Agenda EPS 3" class="ltv-fan-img ltv-fan-3" loading="lazy" decoding="async"></div>
         <div class="ltv-tile-foot"><span class="ltv-tile-name">EPS</span><span class="ltv-tile-go" aria-hidden="true">→</span></div>
       </a>
       <a class="ltv-tile" href="https://www.la-trousse.fr/agendas/espagnol" style="--accent:#c05a1f;">
-        <div class="ltv-fan"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/Agenda%20Espa%201.png?width=600&quality=80" alt="Agenda Espagnol 1" class="ltv-fan-img ltv-fan-1" loading="lazy" decoding="async"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/Agenda%20Espa%204.png?width=600&quality=80" alt="Agenda Espagnol 2" class="ltv-fan-img ltv-fan-2" loading="lazy" decoding="async"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/Agenda%20Espa%207.png?width=600&quality=80" alt="Agenda Espagnol 3" class="ltv-fan-img ltv-fan-3" loading="lazy" decoding="async"></div>
+        <div class="ltv-fan"><img src="/img/agenda-espa-1-v2.png" alt="Agenda Espagnol 1" class="ltv-fan-img ltv-fan-1" loading="lazy" decoding="async"><img src="/img/agenda-espa-5-v2.png" alt="Agenda Espagnol 2" class="ltv-fan-img ltv-fan-2" loading="lazy" decoding="async"><img src="/img/agenda-espa-9-v2.png" alt="Agenda Espagnol 3" class="ltv-fan-img ltv-fan-3" loading="lazy" decoding="async"></div>
         <div class="ltv-tile-foot"><span class="ltv-tile-name">Espagnol</span><span class="ltv-tile-go" aria-hidden="true">→</span></div>
       </a>
       <a class="ltv-tile" href="https://www.la-trousse.fr/agendas/enseignant" style="--accent:#1e2d5a;">
-        <div class="ltv-fan"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/1%20Agenda%20prof%20college%20lycee%203D.png?width=600&quality=80" alt="Agenda Enseignant 1" class="ltv-fan-img ltv-fan-1" loading="lazy" decoding="async"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/4%20Agenda%20prof%20college%20lycee%203D.png?width=600&quality=80" alt="Agenda Enseignant 2" class="ltv-fan-img ltv-fan-2" loading="lazy" decoding="async"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/7%20Agenda%20prof%20college%20lycee%203D.png?width=600&quality=80" alt="Agenda Enseignant 3" class="ltv-fan-img ltv-fan-3" loading="lazy" decoding="async"></div>
+        <div class="ltv-fan"><img src="/img/1-agenda-prof-college-lycee-3d-v4.png" alt="Agenda Enseignant 1" class="ltv-fan-img ltv-fan-1" loading="lazy" decoding="async"><img src="/img/4-agenda-prof-college-lycee-3d-v4.png" alt="Agenda Enseignant 2" class="ltv-fan-img ltv-fan-2" loading="lazy" decoding="async"><img src="/img/7-agenda-prof-college-lycee-3d-v4.png" alt="Agenda Enseignant 3" class="ltv-fan-img ltv-fan-3" loading="lazy" decoding="async"></div>
         <div class="ltv-tile-foot"><span class="ltv-tile-name">Enseignant</span><span class="ltv-tile-go" aria-hidden="true">→</span></div>
       </a>
       <a class="ltv-tile" href="/agendas/anglais" style="--accent:#7c3aed;">
-        <div class="ltv-fan"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/Agenda%20Anglais%201.png?width=600&quality=80" alt="Agenda Anglais 1" class="ltv-fan-img ltv-fan-1" loading="lazy" decoding="async"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/Agenda%20Anglais%203.png?width=600&quality=80" alt="Agenda Anglais 2" class="ltv-fan-img ltv-fan-2" loading="lazy" decoding="async"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/Agenda%20Anglais%205.png?width=600&quality=80" alt="Agenda Anglais 3" class="ltv-fan-img ltv-fan-3" loading="lazy" decoding="async"></div>
+        <div class="ltv-fan"><img src="/img/agenda-anglais-1.png" alt="Agenda Anglais 1" class="ltv-fan-img ltv-fan-1" loading="lazy" decoding="async"><img src="/img/agenda-anglais-3.png" alt="Agenda Anglais 2" class="ltv-fan-img ltv-fan-2" loading="lazy" decoding="async"><img src="/img/agenda-anglais-5.png" alt="Agenda Anglais 3" class="ltv-fan-img ltv-fan-3" loading="lazy" decoding="async"></div>
         <div class="ltv-tile-foot"><span class="ltv-tile-name">Anglais</span></div>
       </a>
     </div>
@@ -246,7 +249,7 @@ body{margin:0;padding:0;}
       <div class="ltv-trust-item"><span>👩‍🏫</span><h3>Conçu avec des profs</h3><p>Pensé avec des enseignants de terrain, pour la réalité du métier.</p></div>
       <div class="ltv-trust-item"><span>🇫🇷</span><h3>Imprimé en France</h3><p>Impression à la demande, sans gâchis, via Bookmundo.</p></div>
       <div class="ltv-trust-item"><span>🎨</span><h3>Des couvertures au choix</h3><p>Plusieurs designs par matière pour trouver la vôtre.</p></div>
-      <div class="ltv-trust-item"><span>💶</span><h3>À prix juste</h3><p>Un vrai outil de travail, accessible dès 11,55 €.</p></div>
+      <div class="ltv-trust-item"><span>💶</span><h3>À prix juste</h3><p>Un vrai outil de travail, accessible dès 11,99 €.</p></div>
     </div>
   </section>
 
@@ -265,7 +268,7 @@ body{margin:0;padding:0;}
   </section>
 
   <div class="ltv-foot">
-    <img src="https://images.pandagro-svt.fr/Images%20agendas%20la%20trousse/logo%20blanc%20sans%20fond%20la%20trousse.png" alt="La Trousse">
+    <img src="/img/logo-blanc-sans-fond-la-trousse.png" alt="La Trousse">
     <div class="ltv-foot-links">
       <a href="https://www.la-trousse.fr/agendas/svt">SVT</a>
       <a href="https://www.la-trousse.fr/agendas/physique-chimie">Physique-Chimie</a>
@@ -274,7 +277,9 @@ body{margin:0;padding:0;}
       <a href="https://www.la-trousse.fr/agendas/histoire-geographie">Histoire-Géo</a>
       <a href="https://www.la-trousse.fr/agendas/eps">EPS</a>
       <a href="https://www.la-trousse.fr/agendas/espagnol">Espagnol</a>
+      <a href="https://www.la-trousse.fr/agendas/anglais">Anglais</a>
       <a href="https://www.la-trousse.fr/agendas/enseignant">Enseignant</a>
+      <a href="https://www.la-trousse.fr/blog/">Blog</a>
     </div>
     La Trousse · Agendas pour enseignants · <a href="https://www.la-trousse.fr">la-trousse.fr</a><br>
     Imprimé à la demande (pas de gâchis) et distribué via Amazon &amp; Bookmundo.
@@ -993,7 +998,7 @@ body{margin:0;padding:0;}
         title="Voir les agendas sur Amazon"
       >
         <img
-          src="https://images.pandagro-svt.fr/Images%20agendas%20la%20trousse/logo%20amazon%20sans%20fond%20(1).png"
+          src="/img/logo-amazon-sans-fond-1-.png"
           alt="Amazon"
         >
       </a>
@@ -1024,7 +1029,7 @@ body{margin:0;padding:0;}
         title="Voir les agendas sur Bookmundo"
       >
         <img
-          src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/logo%20abookmundo%20sans%20ecriture%20bookmundo%20sans%20fond.png?width=600&quality=80"
+          src="/img/logo-abookmundo-sans-ecriture-bookmundo-sans-fond.png"
           alt="Bookmundo"
         >
       </a>
@@ -1053,7 +1058,7 @@ body{margin:0;padding:0;}
         title="Contacter La trousse"
       >
         <img
-          src="https://images.pandagro-svt.fr/Images%20agendas%20la%20trousse/logo%20blanc%20sans%20fond%20sans%20ecriture%20%20la%20trousse.png"
+          src="/img/logo-blanc-sans-fond-sans-ecriture-la-trousse.png"
           alt="La trousse"
         >
 
@@ -1085,7 +1090,7 @@ body{margin:0;padding:0;}
       <div id="lt-header-logo-box">
         <img
           id="lt-header-logo"
-          src="https://images.pandagro-svt.fr/Images%20agendas%20la%20trousse/logo%20blanc%20sans%20fond%20sans%20ecriture%20%20la%20trousse.png"
+          src="/img/logo-blanc-sans-fond-sans-ecriture-la-trousse.png"
           alt="La trousse"
         >
       </div>
@@ -1501,5 +1506,10 @@ body{margin:0;padding:0;}
     }
   })();
 </script>
-</body>
+<footer style="text-align:center;padding:26px 20px 30px;font-family:'Nunito Sans',system-ui,Arial,sans-serif;font-size:13px;color:#94a0bd;background:transparent;">
+  <a href="/mentions-legales" style="color:#5f6c8a;text-decoration:none;margin:0 10px;">Mentions légales</a>
+  <a href="/confidentialite" style="color:#5f6c8a;text-decoration:none;margin:0 10px;">Confidentialité</a>
+  <a href="/cdn-cgi/l/email-protection#9af9f5f4eefbf9eedaf6fbb7eee8f5efe9e9ffb4fce8" style="color:#5f6c8a;text-decoration:none;margin:0 10px;">Contact</a>
+</footer>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
 </html>

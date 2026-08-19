@@ -1,5 +1,12 @@
 # La Trousse — Agendas pour enseignants
 
+> ⚠️ **Ce dépôt n'est pas la source du déploiement.** Cloudflare Pages (projet
+> `la-trousse`) est alimenté par un **dépôt direct** (`wrangler pages deploy`), pas
+> par GitHub. Le 19/08/2026 il avait dérivé : prix à 11,55 €, anglais annoncé
+> indisponible, blog et images absents. Il a été resynchronisé depuis la
+> production. **Avant toute modification, vérifier la page en ligne** —
+> `https://la-trousse.fr/agendas/<slug>` fait foi.
+
 Site vitrine + pages produit pour la marque **La Trousse** (agendas scolaires par matière).
 Chaque page est un bloc HTML autonome (inline `<style>`, pas de fichier CSS externe) pour pouvoir être collé dans un CMS si besoin.
 
@@ -74,7 +81,7 @@ Bookmundo (boutique, toutes matières) : `https://publishnl.bookmundo.com/site/?
 ## Règles de contenu (IMPORTANT)
 
 1. **Pages** : 214 pour SVT, **208 pour toutes les autres matières**.
-2. **Prix** : 11,55 € (sauf SVT qui n'affiche pas de prix fixe).
+2. **Prix** : 11,99 € (sauf SVT qui n'affiche pas de prix fixe).
 3. **"Imprimé en France" = Bookmundo UNIQUEMENT**, jamais Amazon. Ne jamais laisser une formulation qui laisse croire qu'Amazon imprime en France.
 4. **Footer** (identique sur toutes les pages) : `Imprimé à la demande (pas de gâchis) et distribué via Amazon & Bookmundo.`
 5. **SVT** : positionné "La Trousse × Pandagro" (Pandagro = caution d'expertise SVT, pas partenaire effacé). Garde le badge partenariat, la note 4,7★, le jeu de cartes SVT.

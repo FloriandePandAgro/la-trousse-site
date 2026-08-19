@@ -6,8 +6,7 @@
 <title>Agenda Enseignant 2026-2027 Collège-Lycée | La Trousse</title>
 <meta name="description" content="L'agenda de bord enseignant 2026-2027, collège et lycée : 208 pages A4, planning annuel, suivi de 14 classes, réunions et astuces pédagogiques.">
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700&family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,600;0,6..12,700;1,6..12,400&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://pandagro.b-cdn.net" crossorigin>
-<link rel="icon" type="image/png" href="https://images.pandagro-svt.fr/Images%20agendas%20la%20trousse/logo%20flavicon%20la%20trousse%20en%20flavicon%20la%20trousse%20en%20blanc%20sur%20fond%20bleu%20sans%20fond.png">
+<link rel="icon" type="image/png" href="/img/logo-flavicon-la-trousse-en-flavicon-la-trousse-en-blanc-sur-fond-bleu-sans-fond.png">
 
 <style>
 body{margin:0;padding:0;}
@@ -107,9 +106,81 @@ body{margin:0;padding:0;}
 .lt-cov-soon:hover::after{opacity:1;}
 .lt-cov-soon:hover{transform:none;box-shadow:var(--shadow);}
 .lt-cov-note{text-align:center;margin-top:26px;font-size:14px;color:var(--muted2);font-weight:600;}
+/* --- Séries (lt-serie) et capture email bien visible (lt-mail) --- */
+.lt-serie{margin:36px 0 16px;}
+.lt-serie-t{display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+.lt-serie-h{margin:0;font-family:'Baloo 2',cursive;font-size:1.5rem;color:var(--navy);line-height:1.2;}
+.lt-serie-b{font-size:11.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;padding:5px 11px;border-radius:20px;white-space:nowrap;}
+.lt-serie-b-ok{background:#e6f4ea;color:#1b6b35;}
+.lt-serie-b-soon{background:var(--navy);color:#fff;}
+.lt-serie-p{margin:9px 0 0;color:var(--muted);font-size:15px;line-height:1.65;}
+.lt-mail{margin:40px 0 0;background:var(--navy);border-radius:20px;padding:34px 30px;box-shadow:0 18px 44px rgba(30,45,90,.22);}
+.lt-mail-in{display:grid;grid-template-columns:1.05fr .95fr;gap:30px;align-items:center;}
+.lt-mail-h{margin:0 0 10px;font-family:'Baloo 2',cursive;font-size:1.6rem;line-height:1.25;color:#fff;}
+.lt-mail-p{margin:0;color:#cfd8ec;font-size:15px;line-height:1.65;}
+.lt-mail-p strong{color:#fff;}
+.lt-mail-f{display:flex;gap:10px;flex-wrap:wrap;}
+.lt-mail-i{flex:1 1 210px;min-width:0;border:0;border-radius:12px;padding:15px 16px;font-family:inherit;font-size:15.5px;color:var(--navy);background:#fff;}
+.lt-mail-i:focus{outline:3px solid #7f97d6;outline-offset:2px;}
+.lt-mail-b{background:#fff;color:var(--navy);border:0;border-radius:12px;padding:15px 24px;font-family:inherit;font-weight:800;font-size:15.5px;cursor:pointer;transition:transform .18s,background .18s;}
+.lt-mail-b:hover{transform:translateY(-2px);background:#eef2fb;}
+.lt-mail-b:disabled{opacity:.65;cursor:default;transform:none;}
+.lt-mail-l{margin:11px 0 0;color:#9fb0d4;font-size:12.5px;line-height:1.5;}
+.lt-mail-msg{margin:11px 0 0;color:#fff;font-size:15px;font-weight:700;}
+.lt-mail [hidden]{display:none!important;}
+@media(max-width:820px){.lt-mail-in{grid-template-columns:1fr;gap:18px;}.lt-mail{padding:26px 20px;}}
+
+.lt-cov-nyd{cursor:default;}
+.lt-cov-nyd img{filter:grayscale(.5);opacity:.58;}
+.lt-cov-nyd::after{content:attr(data-soon);position:absolute;left:0;right:0;bottom:0;background:rgba(30,45,90,.93);color:#fff;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;text-align:center;padding:7px 5px;line-height:1.25;}
+.lt-cov-nyd:hover{transform:none;box-shadow:var(--shadow);}
+.lt-wl{margin-top:34px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:32px 30px;box-shadow:var(--shadow);}
+.lt-wl-in{display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:center;}
+.lt-wl-h{margin:0 0 10px;font-family:'Baloo 2',cursive;font-size:1.4rem;color:var(--navy);line-height:1.25;}
+.lt-wl-p{margin:0;color:var(--muted);font-size:15px;line-height:1.65;}
+.lt-wl-form{display:flex;flex-direction:column;gap:8px;}
+.lt-wl-lab{font-size:12.5px;font-weight:800;color:var(--navy);letter-spacing:.03em;}
+.lt-wl-inp{width:100%;border:1.5px solid var(--line);border-radius:11px;padding:13px 15px;font-family:inherit;font-size:15px;color:var(--navy);background:#fff;}
+.lt-wl-inp:focus{outline:none;border-color:var(--navy2);box-shadow:0 0 0 3px rgba(30,45,90,.12);}
+.lt-wl-btn{margin-top:6px;background:var(--navy);color:#fff;border:0;border-radius:12px;padding:14px 22px;font-family:inherit;font-weight:800;font-size:15px;cursor:pointer;transition:transform .18s,background .18s;}
+.lt-wl-btn:hover{background:var(--navy2);transform:translateY(-2px);}
+.lt-wl-btn:disabled{opacity:.6;cursor:default;transform:none;}
+.lt-wl-err{margin:2px 0 0;color:#b3261e;font-size:13.5px;font-weight:700;}
+.lt-wl-legal{margin:4px 0 0;color:var(--muted2);font-size:12px;line-height:1.5;}
+.lt-wl-ok{display:flex;gap:14px;align-items:flex-start;background:#f2f8f3;border:1px solid #cfe6d2;border-radius:14px;padding:18px 20px;}
+.lt-wl-ok p{margin:0;color:var(--navy);font-size:15px;line-height:1.6;}
+.lt-wl [hidden]{display:none!important;}
+/* --- Popup liste d'attente (lt-md) --- */
+.lt-cov-nyd{cursor:pointer;}
+.lt-cov-nyd:focus-visible{outline:3px solid var(--navy2);outline-offset:3px;}
+.lt-wl-cta{display:flex;flex-direction:column;gap:10px;align-items:flex-start;}
+.lt-md{--navy:#1e2d5a;--navy2:#2a3d6f;--muted:#5f6c8a;--muted2:#94a0bd;--line:#e3e8f2;--shadow:0 4px 24px rgba(30,45,90,.06);font-family:'Nunito Sans',system-ui,Arial,sans-serif;color:#1b2540;line-height:1.65;}
+.lt-md,.lt-md *,.lt-md *::before,.lt-md *::after{box-sizing:border-box;}
+.lt-md-box{overflow-x:hidden;}
+.lt-cov-nyd:hover img{filter:none;opacity:1;}
+.lt-cov-nyd:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);}
+.lt-md[hidden]{display:none;}
+.lt-md{position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;padding:20px;}
+.lt-md-bg{position:absolute;inset:0;background:rgba(16,24,45,.62);backdrop-filter:blur(2px);}
+.lt-md-box{position:relative;background:#fff;border-radius:20px;max-width:560px;width:100%;max-height:92vh;overflow-y:auto;padding:30px 30px 26px;box-shadow:0 30px 80px rgba(16,24,45,.4);}
+.lt-md-x{position:absolute;top:12px;right:14px;background:none;border:0;font-size:30px;line-height:1;color:var(--muted2);cursor:pointer;padding:4px 8px;}
+.lt-md-x:hover{color:var(--navy);}
+.lt-md-head{display:flex;gap:20px;align-items:flex-start;margin-bottom:20px;}
+.lt-md-img{width:190px;flex-shrink:0;}
+.lt-md-img[hidden]{display:none;}
+.lt-md-tag{margin:0 0 6px;font-size:11px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:#fff;background:var(--navy);display:inline-block;padding:4px 10px;border-radius:20px;}
+.lt-md-t{margin:0 0 8px;font-family:'Baloo 2',cursive;font-size:1.35rem;color:var(--navy);line-height:1.25;}
+.lt-md-p{margin:0;color:var(--muted);font-size:14.5px;line-height:1.6;}
+.lt-md [hidden]{display:none!important;}
+body.lt-md-ouvert #lt-widget{display:none!important;}
+.lt-md-head{padding-right:34px;}
+@media(max-width:560px){.lt-md-box{padding:22px 18px 18px;}.lt-md-head{gap:12px;padding-right:30px;margin-bottom:16px;}.lt-md-img{width:124px;}.lt-md-tag{font-size:10px;padding:4px 8px;}.lt-md-t{font-size:1.05rem;margin-bottom:5px;}.lt-md-p{font-size:13.5px;}.lt-wl-legal{font-size:11.5px;}}
+.lt-md-tag{white-space:nowrap;}
+
+@media(max-width:820px){.lt-wl-in{grid-template-columns:1fr;gap:20px;}.lt-wl{padding:26px 20px;}}
 
 /* Loupe desktop */
-.lt-lens{position:fixed;z-index:9998;pointer-events:none;width:330px;height:440px;border-radius:14px;overflow:hidden;box-shadow:var(--shadow-lg);border:4px solid #fff;background:#fff center/cover no-repeat;opacity:0;transform:scale(.9);transition:opacity .16s,transform .16s;display:none;}
+.lt-lens{position:fixed;z-index:9998;pointer-events:none;width:470px;height:620px;border-radius:14px;overflow:hidden;box-shadow:var(--shadow-lg);border:4px solid #fff;background:#fff center/cover no-repeat;opacity:0;transform:scale(.9);transition:opacity .16s,transform .16s;display:none;}
 .lt-lens.lt-on{opacity:1;transform:scale(1);}
 @media(hover:none){.lt-lens{display:none!important;}}
 
@@ -218,12 +289,12 @@ body{margin:0;padding:0;}
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.la-trousse.fr/agendas/enseignant">
 <meta property="og:title" content="Agenda Prof Collège-Lycée 2026-2027 | La Trousse">
-<meta property="og:description" content="L'agenda des profs de collège et lycée pour 2026-2027 : 208 pages A4, suivi de classes. Dès 11,55 €.">
-<meta property="og:image" content="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/Vue%20panarama%20agendas%20senseignants%20college%20lycee%20sans%20fond.png?width=1200&quality=75">
+<meta property="og:description" content="L'agenda des profs de collège et lycée pour 2026-2027 : 208 pages A4, suivi de classes. Dès 11,99 €.">
+<meta property="og:image" content="https://www.la-trousse.fr/img/vue-panarama-agendas-enseignant-sans-fond-v5.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/Vue%20panarama%20agendas%20senseignants%20college%20lycee%20sans%20fond.png?width=1200&quality=75">
+<meta name="twitter:image" content="https://www.la-trousse.fr/img/vue-panarama-agendas-enseignant-sans-fond-v5.png">
 </head>
 <body>
 <div class="lt">
@@ -234,7 +305,7 @@ body{margin:0;padding:0;}
   <div class="lt-bar">
     <div class="lt-bar-in">
       <a class="lt-logo" href="https://www.la-trousse.fr">
-        <img src="https://images.pandagro-svt.fr/Images%20agendas%20la%20trousse/logo%20sans%20fond%20la%20trousse.png" alt="La Trousse" class="lt-logo-img">
+        <img src="/img/logo-sans-fond-la-trousse.png" alt="La Trousse" class="lt-logo-img">
       </a>
       <nav class="lt-subnav" aria-label="Nos agendas par matière">
         <a href="https://www.la-trousse.fr/agendas/enseignant" class="lt-active">Enseignant</a>
@@ -262,10 +333,10 @@ body{margin:0;padding:0;}
           <a class="lt-btn" href="https://www.amazon.fr/dp/B0GX36QB7H?binding=paperback&ref=dbs_dp_rwt_sb_pc_tpbk" target="_blank" rel="noopener">Commander sur Amazon</a>
           <a class="lt-btn lt-btn-ghost" href="#lt-couvertures">Voir les couvertures</a>
         </div>
-        <p class="lt-hero-note">Seulement 11,55 € · Format A4 · 9 couvertures au choix<br>Livraison Amazon à 3 €, gratuite dès 35 € d'achat</p>
+        <p class="lt-hero-note">Seulement 11,99 € · Format A4 · 9 couvertures au choix<br>Livraison Amazon à 3 €, gratuite dès 35 € d'achat</p>
       </div>
       <div class="lt-hero-img">
-        <img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/Vue%20panarama%20agendas%20senseignants%20college%20lycee%20sans%20fond.png?width=1200&quality=75" alt="Les couvertures de l'Agenda La Trousse Enseignant" loading="eager" fetchpriority="high" decoding="async">
+        <img src="/img/vue-panarama-agendas-enseignant-sans-fond-v5.png" alt="Les couvertures de l'Agenda La Trousse Enseignant" loading="eager" fetchpriority="high" decoding="async">
       </div>
     </div>
   </section>
@@ -276,7 +347,7 @@ body{margin:0;padding:0;}
       <div class="lt-stat"><div class="lt-stat-n">208</div><div class="lt-stat-l">pages A4</div></div>
       <div class="lt-stat"><div class="lt-stat-n">14</div><div class="lt-stat-l">classes suivies</div></div>
       <div class="lt-stat"><div class="lt-stat-n">9</div><div class="lt-stat-l">couvertures</div></div>
-      <div class="lt-stat"><div class="lt-stat-n">11,55€</div><div class="lt-stat-l">le prix</div></div>
+      <div class="lt-stat"><div class="lt-stat-n">11,99€</div><div class="lt-stat-l">le prix</div></div>
     </div>
   </div>
 
@@ -286,20 +357,56 @@ body{margin:0;padding:0;}
       <div class="lt-head">
         <div class="lt-eyebrow lt-eyebrow-c">Plusieurs couvertures</div>
         <h2 class="lt-h2">Choisissez votre couverture</h2>
-        <p class="lt-lead">Le contenu intérieur est identique pour toutes. Cliquez sur celle qui vous plaît pour accéder à sa page Amazon. 9 couvertures au choix pour trouver celle qui vous ressemble.</p>
+        <p class="lt-lead">Le contenu intérieur est identique pour toutes. Cliquez sur celle qui vous plaît pour accéder à sa page Amazon. 9 couvertures au choix pour trouver celle qui vous ressemble. Le modèle grisé n'est <strong>pas encore en vente</strong> ; les autres sont cliquables.</p>
       </div>
       <div class="lt-cov-grid" aria-label="Les couvertures disponibles">
-          <a class="lt-cov" href="https://www.amazon.fr/dp/B0H8575XJF" target="_blank" rel="noopener"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/1%20Agenda%20prof%20college%20lycee%203D.png?width=600&quality=80" alt="Agenda La Trousse Enseignant couverture 1" loading="lazy" decoding="async"></a>
-          <a class="lt-cov" href="https://www.amazon.fr/dp/B0H8LSYQHL" target="_blank" rel="noopener"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/2%20Agenda%20prof%20college%20lycee%203D.png?width=600&quality=80" alt="Agenda La Trousse Enseignant couverture 2" loading="lazy" decoding="async"></a>
-          <a class="lt-cov" href="https://www.amazon.fr/dp/B0H8KG21QM" target="_blank" rel="noopener"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/3%20Agenda%20prof%20college%20lycee%203D.png?width=600&quality=80" alt="Agenda La Trousse Enseignant couverture 3" loading="lazy" decoding="async"></a>
-          <a class="lt-cov" href="https://www.amazon.fr/dp/B0H8NSKNHG" target="_blank" rel="noopener"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/4%20Agenda%20prof%20college%20lycee%203D.png?width=600&quality=80" alt="Agenda La Trousse Enseignant couverture 4" loading="lazy" decoding="async"></a>
-          <a class="lt-cov" href="https://www.amazon.fr/dp/B0H8KD7CWT" target="_blank" rel="noopener"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/5%20Agenda%20prof%20college%20lycee%203D.png?width=600&quality=80" alt="Agenda La Trousse Enseignant couverture 5" loading="lazy" decoding="async"></a>
-          <a class="lt-cov" href="https://www.amazon.fr/dp/B0H95FJ2LQ" target="_blank" rel="noopener"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/6%20Agenda%20prof%20college%20lycee%203D.png?width=600&quality=80" alt="Agenda La Trousse Enseignant couverture 6" loading="lazy" decoding="async"></a>
-          <a class="lt-cov" href="https://www.amazon.fr/dp/B0H95G6RC3" target="_blank" rel="noopener"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/7%20Agenda%20prof%20college%20lycee%203D.png?width=600&quality=80" alt="Agenda La Trousse Enseignant couverture 7" loading="lazy" decoding="async"></a>
-          <a class="lt-cov" href="https://www.amazon.fr/dp/B0H9554B6W" target="_blank" rel="noopener"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/8%20Agenda%20prof%20college%20lycee%203D.png?width=600&quality=80" alt="Agenda La Trousse Enseignant couverture 8" loading="lazy" decoding="async"></a>
-          <a class="lt-cov" href="https://www.amazon.fr/dp/B0H957XC42" target="_blank" rel="noopener"><img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/9%20Agenda%20prof%20college%20lycee%203D.png?width=600&quality=80" alt="Agenda La Trousse Enseignant couverture 9" loading="lazy" decoding="async"></a>
+          <a class="lt-cov" href="https://www.amazon.fr/dp/B0H8575XJF" target="_blank" rel="noopener"><img src="/img/1-agenda-prof-college-lycee-3d-v4.png" alt="Agenda La Trousse Enseignant couverture 1" loading="lazy" decoding="async"></a>
+          <a class="lt-cov" href="https://www.amazon.fr/dp/B0H8LSYQHL" target="_blank" rel="noopener"><img src="/img/2-agenda-prof-college-lycee-3d-v4.png" alt="Agenda La Trousse Enseignant couverture 2" loading="lazy" decoding="async"></a>
+          <a class="lt-cov" href="https://www.amazon.fr/dp/B0H8KG21QM" target="_blank" rel="noopener"><img src="/img/3-agenda-prof-college-lycee-3d-v4.png" alt="Agenda La Trousse Enseignant couverture 3" loading="lazy" decoding="async"></a>
+          <a class="lt-cov" href="https://www.amazon.fr/dp/B0H8NSKNHG" target="_blank" rel="noopener"><img src="/img/4-agenda-prof-college-lycee-3d-v4.png" alt="Agenda La Trousse Enseignant couverture 4" loading="lazy" decoding="async"></a>
+          <a class="lt-cov" href="https://www.amazon.fr/dp/B0H8KD7CWT" target="_blank" rel="noopener"><img src="/img/5-agenda-prof-college-lycee-3d-v4.png" alt="Agenda La Trousse Enseignant couverture 5" loading="lazy" decoding="async"></a>
+          <a class="lt-cov" href="https://www.amazon.fr/dp/B0H95FJ2LQ" target="_blank" rel="noopener"><img src="/img/6-agenda-prof-college-lycee-3d-v4.png" alt="Agenda La Trousse Enseignant couverture 6" loading="lazy" decoding="async"></a>
+          <a class="lt-cov" href="https://www.amazon.fr/dp/B0H95G6RC3" target="_blank" rel="noopener"><img src="/img/7-agenda-prof-college-lycee-3d-v4.png" alt="Agenda La Trousse Enseignant couverture 7" loading="lazy" decoding="async"></a>
+          <a class="lt-cov" href="https://www.amazon.fr/dp/B0H9554B6W" target="_blank" rel="noopener"><img src="/img/8-agenda-prof-college-lycee-3d-v4.png" alt="Agenda La Trousse Enseignant couverture 8" loading="lazy" decoding="async"></a>
+          <a class="lt-cov" href="https://www.amazon.fr/dp/B0H957XC42" target="_blank" rel="noopener"><img src="/img/9-agenda-prof-college-lycee-3d-v4.png" alt="Agenda La Trousse Enseignant couverture 9" loading="lazy" decoding="async"></a>
       </div>
       <p class="lt-cov-note">Passez la souris sur une couverture pour la voir en grand.</p>
+
+<!-- lt-mail : capture email mise en évidence -->
+      <div class="lt-mail" id="lt-mail">
+        <div class="lt-mail-in">
+          <div>
+            <h3 class="lt-mail-h">Soyez prévenu des prochaines couvertures</h3>
+            <p class="lt-mail-p">Le second « What the Phoque ? » arrive très bientôt. Laissez votre email : vous serez prévenu le jour de sa mise en ligne, et de rien d'autre.</p>
+          </div>
+          <div>
+            <form class="lt-mail-f" id="lt-mail-f" novalidate>
+              <input type="hidden" name="matiere" value="Enseignant">
+              <input type="hidden" name="couverture" value="">
+              <input class="lt-mail-i" name="email" type="email" required autocomplete="email" placeholder="vous@exemple.fr" aria-label="Votre adresse email">
+              <button class="lt-mail-b" type="submit">Prévenez-moi</button>
+            </form>
+            <p class="lt-mail-l">Votre email sert uniquement à vous prévenir des sorties. Désinscription en un clic.</p>
+            <p class="lt-mail-msg" id="lt-mail-msg" hidden></p>
+          </div>
+        </div>
+      </div>
+
+<!-- lt-waitlist -->
+      <div class="lt-wl" id="lt-wl">
+        <div class="lt-wl-in">
+          <div>
+            <h3 class="lt-wl-h">Prévenez-moi dès qu'elle est en ligne</h3>
+            <p class="lt-wl-p">La couverture grisée ci-dessus arrive <strong>très bientôt</strong>. Cliquez dessus : vous recevrez un message le jour où elle sera disponible.</p>
+          </div>
+          <div class="lt-wl-cta">
+            <button type="button" class="lt-wl-btn" data-wl-open>Prévenez-moi</button>
+            <p class="lt-wl-legal">Votre email sert uniquement à vous prévenir de cette sortie. Désinscription en un clic.</p>
+          </div>
+        </div>
+      </div>
+
+
 
       <!-- BOOKMUNDO -->
       <div class="lt-book">
@@ -310,7 +417,7 @@ body{margin:0;padding:0;}
           <p>Bookmundo est un imprimeur <strong>français</strong> — une alternative à Amazon pour commander l'agenda en circuit court. En cliquant sur le lien, vous retrouverez <strong>tous les agendas La Trousse, toutes matières confondues</strong> : enseignant collège-lycée, physique-chimie, SVT, français, EPS, histoire-géographie, maths, anglais et espagnol — pratique pour commander à plusieurs.</p>
         </div>
         <div class="lt-book-r">
-          <img src="https://images.pandagro-svt.fr/Images%20agendas%20la%20trousse/Logo%20boomundo%20en%20250%20x%2050%20px%20sans%20fond%20(1).png" alt="Bookmundo" class="lt-bm-logo">
+          <img src="/img/logo-boomundo-en-250-x-50-px-sans-fond-1-.png" alt="Bookmundo" class="lt-bm-logo">
           <p>Retrouvez l'ensemble des agendas La Trousse sur la boutique Bookmundo.</p>
           <a class="lt-btn" href="https://publishfr.bookmundo.com/site/?r=userwebsite/index&id=agendaslatrousse/allbooks" target="_blank" rel="noopener">Voir la boutique →</a>
         </div>
@@ -427,7 +534,7 @@ body{margin:0;padding:0;}
   <!-- CTA -->
   <section class="lt-cta">
     <div class="lt-cta-box">
-      <img src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/Vue%20panarama%20agendas%20senseignants%20college%20lycee%20sans%20fond.png?width=1200&quality=75" alt="Les couvertures de l'Agenda La Trousse Enseignant">
+      <img src="/img/vue-panarama-agendas-enseignant-sans-fond-v5.png" alt="Les couvertures de l'Agenda La Trousse Enseignant">
       <h2>Prêt à organiser votre année ?</h2>
       <p>208 pages, plusieurs couvertures au choix et des bonus à télécharger pour vous accompagner toute l'année scolaire.</p>
       <a class="lt-btn" href="https://www.amazon.fr/dp/B0GX36QB7H?binding=paperback&ref=dbs_dp_rwt_sb_pc_tpbk" target="_blank" rel="noopener">Commander sur Amazon</a>
@@ -437,8 +544,8 @@ body{margin:0;padding:0;}
 
   <!-- FOOTER -->
   <div class="lt-foot">
-    <div class="lt-foot-logo"><img src="https://images.pandagro-svt.fr/Images%20agendas%20la%20trousse/logo%20blanc%20sans%20fond%20la%20trousse.png" alt="La Trousse" style="height:46px;width:auto;"></div>
-    Agendas pour enseignants · <a href="https://www.la-trousse.fr" target="_blank" rel="noopener">la-trousse.fr</a><br>
+    <div class="lt-foot-logo"><img src="/img/logo-blanc-sans-fond-la-trousse.png" alt="La Trousse" style="height:46px;width:auto;"></div>
+    Agendas pour enseignants · <a href="https://www.la-trousse.fr" target="_blank" rel="noopener">la-trousse.fr</a> · <a href="https://www.la-trousse.fr/blog/">Le blog</a><br>
     Imprimé à la demande (pas de gâchis) et distribué via Amazon &amp; Bookmundo.
   </div>
 
@@ -1187,7 +1294,7 @@ body{margin:0;padding:0;}
         title="Voir les agendas sur Amazon"
       >
         <img
-          src="https://images.pandagro-svt.fr/Images%20agendas%20la%20trousse/logo%20amazon%20sans%20fond%20(1).png"
+          src="/img/logo-amazon-sans-fond-1-.png"
           alt="Amazon"
         >
       </a>
@@ -1218,7 +1325,7 @@ body{margin:0;padding:0;}
         title="Voir les agendas sur Bookmundo"
       >
         <img
-          src="https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/logo%20abookmundo%20sans%20ecriture%20bookmundo%20sans%20fond.png?width=600&quality=80"
+          src="/img/logo-abookmundo-sans-ecriture-bookmundo-sans-fond.png"
           alt="Bookmundo"
         >
       </a>
@@ -1247,7 +1354,7 @@ body{margin:0;padding:0;}
         title="Contacter La trousse"
       >
         <img
-          src="https://images.pandagro-svt.fr/Images%20agendas%20la%20trousse/logo%20blanc%20sans%20fond%20sans%20ecriture%20%20la%20trousse.png"
+          src="/img/logo-blanc-sans-fond-sans-ecriture-la-trousse.png"
           alt="La trousse"
         >
 
@@ -1279,7 +1386,7 @@ body{margin:0;padding:0;}
       <div id="lt-header-logo-box">
         <img
           id="lt-header-logo"
-          src="https://images.pandagro-svt.fr/Images%20agendas%20la%20trousse/logo%20blanc%20sans%20fond%20sans%20ecriture%20%20la%20trousse.png"
+          src="/img/logo-blanc-sans-fond-sans-ecriture-la-trousse.png"
           alt="La trousse"
         >
       </div>
@@ -1695,5 +1802,165 @@ body{margin:0;padding:0;}
     }
   })();
 </script>
-</body>
+
+<!-- lt-modal -->
+<div class="lt-md" id="lt-md" hidden>
+  <div class="lt-md-bg" data-wl-close></div>
+  <div class="lt-md-box" role="dialog" aria-modal="true" aria-labelledby="lt-md-t">
+    <button class="lt-md-x" type="button" data-wl-close aria-label="Fermer">&times;</button>
+    <div class="lt-md-head">
+      <img class="lt-md-img" id="lt-md-img" alt="" hidden>
+      <div>
+        <p class="lt-md-tag">Bientôt disponible</p>
+        <h3 class="lt-md-t" id="lt-md-t">Prévenez-moi</h3>
+        <p class="lt-md-p">Vous recevrez un email le jour de la mise en ligne, <strong>très bientôt</strong>.</p>
+      </div>
+    </div>
+    <form class="lt-wl-form" id="lt-wl-form" novalidate>
+      <input type="hidden" name="matiere" value="Enseignant">
+      <input type="hidden" name="couverture" id="lt-md-cov" value="">
+      <label class="lt-wl-lab" for="lt-wl-prenom">Prénom (facultatif)</label>
+      <input class="lt-wl-inp" id="lt-wl-prenom" name="firstName" type="text" autocomplete="given-name" placeholder="Votre prénom">
+      <label class="lt-wl-lab" for="lt-wl-email">Email</label>
+      <input class="lt-wl-inp" id="lt-wl-email" name="email" type="email" required autocomplete="email" placeholder="vous@exemple.fr">
+      <button class="lt-wl-btn" type="submit">Prévenez-moi</button>
+      <p class="lt-wl-err" id="lt-wl-err" role="alert" hidden></p>
+      <p class="lt-wl-legal">Votre email sert uniquement à vous prévenir de cette sortie. Désinscription en un clic.</p>
+    </form>
+    <div class="lt-wl-ok" id="lt-wl-ok" hidden>
+      <span aria-hidden="true" style="font-size:22px;line-height:1;">✅</span>
+      <p><strong>C'est noté.</strong> <span id="lt-md-ok-t">Vous serez prévenu dès sa mise en ligne.</span></p>
+    </div>
+  </div>
+</div>
+<script>
+/* Liste d'attente en popup. Un clic sur une couverture grisée ouvre la fenêtre
+   avec son visuel et son numéro ; le numéro part avec l'email pour qu'on sache
+   quelle couverture est attendue. */
+(function(){
+  var md = document.getElementById('lt-md');
+  if (!md) return;
+  var form = document.getElementById('lt-wl-form');
+  var ok   = document.getElementById('lt-wl-ok');
+  var err  = document.getElementById('lt-wl-err');
+  var img  = document.getElementById('lt-md-img');
+  var titre= document.getElementById('lt-md-t');
+  var okT  = document.getElementById('lt-md-ok-t');
+  var champ= document.getElementById('lt-md-cov');
+  var rendre; // element a refocaliser a la fermeture
+
+  function ouvrir(num, src, alt, source){
+    champ.value = num || '';
+    if (src) { img.src = src; img.alt = alt || ''; img.hidden = false; }
+    else { img.hidden = true; img.removeAttribute('src'); }
+    titre.textContent = num ? ('Couverture n\u00b0 ' + num) : 'Pr\u00e9venez-moi';
+    okT.textContent = num
+      ? ('Vous serez pr\u00e9venu d\u00e8s que la couverture n\u00b0 ' + num + ' sera en ligne.')
+      : 'Vous serez pr\u00e9venu d\u00e8s leur mise en ligne.';
+    form.hidden = false; ok.hidden = true; err.hidden = true;
+    var btn = form.querySelector('.lt-wl-btn');
+    btn.disabled = false; btn.textContent = 'Pr\u00e9venez-moi';
+    md.hidden = false;
+    document.body.style.overflow = 'hidden';
+    document.body.classList.add('lt-md-ouvert');
+    rendre = source || null;
+    setTimeout(function(){ document.getElementById('lt-wl-email').focus(); }, 60);
+  }
+
+  function fermer(){
+    md.hidden = true;
+    document.body.style.overflow = '';
+    document.body.classList.remove('lt-md-ouvert');
+    if (rendre && rendre.focus) rendre.focus();
+  }
+
+  document.querySelectorAll('.lt-cov-nyd').forEach(function(c){
+    c.setAttribute('role','button');
+    c.setAttribute('tabindex','0');
+    var im = c.querySelector('img');
+    var num = c.getAttribute('data-num') || '';
+    c.setAttribute('aria-label','Couverture ' + num + ' \u2014 bient\u00f4t disponible, \u00eatre pr\u00e9venu');
+    function go(){ ouvrir(num, im ? im.getAttribute('src') : '', im ? im.getAttribute('alt') : '', c); }
+    c.addEventListener('click', go);
+    c.addEventListener('keydown', function(e){
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); }
+    });
+  });
+
+  document.querySelectorAll('[data-wl-open]').forEach(function(b){
+    b.addEventListener('click', function(){ ouvrir('', '', '', b); });
+  });
+  md.querySelectorAll('[data-wl-close]').forEach(function(b){
+    b.addEventListener('click', fermer);
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && !md.hidden) fermer();
+  });
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var btn = form.querySelector('.lt-wl-btn');
+    var email = form.email.value.trim();
+    err.hidden = true;
+    if (!email || email.indexOf('@') === -1) {
+      err.textContent = 'Merci d\u2019indiquer un email valide.'; err.hidden = false; return;
+    }
+    btn.disabled = true; btn.textContent = 'Envoi\u2026';
+    fetch('/api/waitlist', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        email: email,
+        firstName: form.firstName.value.trim(),
+        matiere: form.matiere.value,
+        couverture: champ.value
+      })
+    })
+    .then(function(r){ if (!r.ok) throw new Error('http ' + r.status); return r.json(); })
+    .then(function(){ form.hidden = true; ok.hidden = false; })
+    .catch(function(){
+      btn.disabled = false; btn.textContent = 'Pr\u00e9venez-moi';
+      err.textContent = 'Envoi impossible pour le moment. R\u00e9essayez dans un instant.';
+      err.hidden = false;
+    });
+  });
+})();
+</script>
+
+<script>
+/* Capture email en clair sur la page (le bouton seul passait inaperçu). */
+(function(){
+  var f = document.getElementById('lt-mail-f');
+  if (!f) return;
+  var msg = document.getElementById('lt-mail-msg');
+  f.addEventListener('submit', function(e){
+    e.preventDefault();
+    var b = f.querySelector('.lt-mail-b');
+    var email = f.email.value.trim();
+    if (!email || email.indexOf('@') === -1) {
+      msg.hidden = false; msg.textContent = 'Merci d\u2019indiquer un email valide.'; return;
+    }
+    b.disabled = true; b.textContent = 'Envoi\u2026';
+    fetch('/api/waitlist', {
+      method: 'POST', headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({ email: email, matiere: f.matiere.value, couverture: f.couverture.value })
+    })
+    .then(function(r){ if (!r.ok) throw new Error('http ' + r.status); return r.json(); })
+    .then(function(){
+      f.hidden = true; msg.hidden = false;
+      msg.textContent = '\u2705 C\u2019est not\u00e9 \u2014 vous serez pr\u00e9venu d\u00e8s la mise en ligne.';
+    })
+    .catch(function(){
+      b.disabled = false; b.textContent = 'Pr\u00e9venez-moi';
+      msg.hidden = false; msg.textContent = 'Envoi impossible pour le moment. R\u00e9essayez dans un instant.';
+    });
+  });
+})();
+</script>
+<footer style="text-align:center;padding:26px 20px 30px;font-family:'Nunito Sans',system-ui,Arial,sans-serif;font-size:13px;color:#94a0bd;background:transparent;">
+  <a href="/mentions-legales" style="color:#5f6c8a;text-decoration:none;margin:0 10px;">Mentions légales</a>
+  <a href="/confidentialite" style="color:#5f6c8a;text-decoration:none;margin:0 10px;">Confidentialité</a>
+  <a href="/cdn-cgi/l/email-protection#e5868a8b91848691a58984c891978a90969680cb8397" style="color:#5f6c8a;text-decoration:none;margin:0 10px;">Contact</a>
+</footer>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
 </html>

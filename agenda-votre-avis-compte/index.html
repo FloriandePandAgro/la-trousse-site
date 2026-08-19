@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap" rel="stylesheet">
-<link rel="icon" type="image/png" href="https://images.pandagro-svt.fr/Images%20agendas%20la%20trousse/logo%20flavicon%20la%20trousse%20en%20flavicon%20la%20trousse%20en%20blanc%20sur%20fond%20bleu%20sans%20fond.png">
+<link rel="icon" type="image/png" href="/img/logo-flavicon-la-trousse-en-flavicon-la-trousse-en-blanc-sur-fond-bleu-sans-fond.png">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 body{
@@ -171,7 +171,7 @@ body{
 
 <header class="rv-header">
   <a href="https://www.la-trousse.fr">
-    <img src="https://images.pandagro-svt.fr/Images%20agendas%20la%20trousse/logo%20sans%20fond%20la%20trousse.png" alt="La Trousse" class="rv-logo">
+    <img src="/img/logo-sans-fond-la-trousse.png" alt="La Trousse" class="rv-logo">
   </a>
 </header>
 
@@ -204,97 +204,122 @@ body{
 
 <script>
 var R = 'https://www.amazon.fr/review/create-review/ref=cm_cr_othr_d_wr_but_top?ie=UTF8&channel=glance-detail&asin=';
-var CDN = 'https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/';
 
 var SUBJECTS = {
   svt: {
     name: 'SVT',
     items: [
-      { img: 'https://d1yei2z3i6k35z.cloudfront.net/875960/6a11c5d136b4f4.23563996_4.png', asin: 'B0D7YSBP7H' },
-      { img: 'https://d1yei2z3i6k35z.cloudfront.net/875960/6a124db0cf03d0.43370434_Couvertureagenda5.png', asin: 'B0H4QFCN8L' },
-      { img: 'https://d1yei2z3i6k35z.cloudfront.net/875960/6a11c58a605404.10722208_1.png', asin: 'B0H4139XYM' },
-      { img: 'https://d1yei2z3i6k35z.cloudfront.net/875960/6a11c5b6e88485.29779467_3.png', asin: 'B0H4FVYCR6' },
-      { img: 'https://d1yei2z3i6k35z.cloudfront.net/875960/6a11c6119b2537.79239922_6.png', asin: 'B0H41BZFPS' },
-      { img: 'https://d1yei2z3i6k35z.cloudfront.net/875960/6a11c59e34c818.42831696_2.png', asin: 'B0H412B89Z' },
-      { img: 'https://d1yei2z3i6k35z.cloudfront.net/875960/6a11c5f4359ce3.18533656_5.png', asin: 'B0H4145VD3' },
-      { img: 'https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/8%20Agenda%20svt.png?width=400&quality=80', asin: 'B0H6KNWYZC' },
-      { img: 'https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/9%20Agenda%20svt.png?width=400&quality=80', asin: 'B0H6YHGJZ8' },
-      { img: 'https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/10%20Agenda%20svt.png?width=400&quality=80', asin: 'B0H72CSLZ9' },
-      { img: 'https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/11%20Agenda%20svt.png?width=400&quality=80', asin: 'B0H741RT7G' },
-      { img: 'https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/12%20Agenda%20svt.png?width=400&quality=80', asin: 'B0H6H8J3J2' },
-      { img: 'https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/13%20Agenda%20svt.png?width=400&quality=80', asin: 'B0H83V1PLX' },
-      { img: 'https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/14%20Agenda%20svt.png?width=400&quality=80', asin: 'B0H6KLVBDS' },
-      { img: 'https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/15%20Agenda%20svt.png?width=400&quality=80', asin: 'B0H6KN2X2Q' },
-      { img: 'https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/16%20Agenda%20svt.png?width=400&quality=80', asin: 'B0H6QTFQFG' },
-      { img: 'https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/17%20Agenda%20svt.png?width=400&quality=80', asin: 'B0H6YKZTJ3' },
-      { img: 'https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/18%20Agenda%20svt.png?width=400&quality=80', asin: 'B0H6YMWXBY' }
+      { img: '/img/1-agenda-svt-v2.png', asin: 'B0D7YSBP7H' },
+      { img: '/img/2-agenda-svt-v2.png', asin: 'B0H4QFCN8L' },
+      { img: '/img/3-agenda-svt-v2.png', asin: 'B0H4139XYM' },
+      { img: '/img/4-agenda-svt-v2.png', asin: 'B0H4FVYCR6' },
+      { img: '/img/5-agenda-svt-v2.png', asin: 'B0H41BZFPS' },
+      { img: '/img/6-agenda-svt-v2.png', asin: 'B0H412B89Z' },
+      { img: '/img/7-agenda-svt-v2.png', asin: 'B0H4145VD3' },
+      { img: '/img/8-agenda-svt-v2.png', asin: 'B0H6KNWYZC' },
+      { img: '/img/9-agenda-svt-v2.png', asin: 'B0H6YHGJZ8' },
+      { img: '/img/10-agenda-svt-v2.png', asin: 'B0H72CSLZ9' },
+      { img: '/img/11-agenda-svt-v2.png', asin: 'B0H741RT7G' },
+      { img: '/img/12-agenda-svt-v2.png', asin: 'B0H6H8J3J2' },
+      { img: '/img/13-agenda-svt-v2.png', asin: 'B0H83V1PLX' },
+      { img: '/img/14-agenda-svt-v2.png', asin: 'B0H6KLVBDS' },
+      { img: '/img/15-agenda-svt-v2.png', asin: 'B0H6KN2X2Q' },
+      { img: '/img/16-agenda-svt-v2.png', asin: 'B0H6QTFQFG' },
+      { img: '/img/17-agenda-svt-v2.png', asin: 'B0H6YKZTJ3' },
+      { img: '/img/18-agenda-svt-v2.png', asin: 'B0H6YMWXBY' }
     ]
   },
   maths: {
     name: 'Maths',
     items: [
-      { img: 'https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/Agenda%20Maths%201.png?width=400&quality=80', asin: 'B0H7TCRGNF' }
+      { img: '/img/agenda-maths-1.png', asin: 'B0H7TCRGNF' }
     ]
   },
   pc: {
     name: 'Physique-Chimie',
     items: [
-      { img: 'https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/Agenda%20PC%201.png?width=400&quality=80', asin: 'B0H7T7C2S7' },
-      { img: 'https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/Agenda%20PC%202.png?width=400&quality=80', asin: 'B0H7Z1PD9Y' }
+      { img: '/img/agenda-pc-1.png', asin: 'B0H7T7C2S7' },
+      { img: '/img/agenda-pc-2.png', asin: 'B0H7Z1PD9Y' },
+      { img: '/img/agenda-pc-3.png', asin: 'B0HC7NZP2K' },
+      { img: '/img/agenda-pc-4.png', asin: 'B0HC87D4XN' },
+      { img: '/img/agenda-pc-5.png', asin: 'B0HBP8PSQC' },
+      { img: '/img/agenda-pc-6.png', asin: 'B0HBNW5HSP' }
     ]
   },
   francais: {
     name: 'Français',
     items: [
-      { img: 'https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/agenda%20Franc%CC%A7ais%201.png?width=400&quality=80', asin: 'B0H7TDZR69' },
-      { img: 'https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/agenda%20Franc%CC%A7ais%202.png?width=400&quality=80', asin: 'B0H9NK2L96' }
+      { img: '/img/agenda-francais-1-v2.png', asin: 'B0H7TDZR69' },
+      { img: '/img/agenda-francais-2-v2.png', asin: 'B0H9NK2L96' },
+      { img: '/img/agenda-francais-3-v2.png', asin: 'B0HB9RT28K' },
+      { img: '/img/agenda-francais-4-v2.png', asin: 'B0HB9P9H5L' },
+      { img: '/img/agenda-francais-5-v2.png', asin: 'B0HBB5D7HY' },
+      { img: '/img/agenda-francais-6-v2.png', asin: 'B0HBNP66PN' },
+      { img: '/img/agenda-francais-7-v2.png', asin: 'B0HBP4BGNT' }
     ]
   },
   hg: {
     name: 'Histoire-Géo',
     items: [
-      { img: 'https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/agenda%20HG1.png?width=400&quality=80', asin: 'B0H79T7YZX' },
-      { img: 'https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/agenda%20HG2.png?width=400&quality=80', asin: 'B0H9NTKP27' },
-      { img: 'https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/agenda%20HG3.png?width=400&quality=80', asin: 'B0H9NV89YS' },
-      { img: 'https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/agenda%20HG4.png?width=400&quality=80', asin: 'B0H9NM7C2D' }
+      { img: '/img/hg-classique-1.png', asin: 'B0H79T7YZX' },
+      { img: '/img/hg-classique-2.png', asin: 'B0H9NTKP27' },
+      { img: '/img/hg-classique-3.png', asin: 'B0H9NV89YS' },
+      { img: '/img/hg-classique-4.png', asin: 'B0H9NM7C2D' },
+      { img: '/img/hg-classique-5.png', asin: 'B0HB9QZKW7' },
+      { img: '/img/hg-classique-6.png', asin: 'B0HBP2MQFL' }
     ]
   },
   eps: {
     name: 'EPS',
     items: [
-      { img: 'https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/Agenda%20EPS%201.png?width=400&quality=80', asin: 'B0H7TFQRH6' }
+      { img: '/img/agenda-eps-1.png', asin: 'B0H7TFQRH6' },
+      { img: '/img/agenda-eps-2.png', asin: 'B0HDJK77PY' },
+      { img: '/img/agenda-eps-3.png', asin: 'B0HDJNZ9QJ' },
+      { img: '/img/agenda-eps-4.png', asin: 'B0HDJSPTWG' },
+      { img: '/img/agenda-eps-5.png', asin: 'B0HCSW8M5R' },
+      { img: '/img/agenda-eps-6.png', asin: 'B0HDJNMJW8' }
     ]
   },
   espagnol: {
     name: 'Espagnol',
     items: [
-      { img: 'https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/Agenda%20Espa%201.png?width=400&quality=80', asin: 'B0H7TFJPQM' },
-      { img: 'https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/Agenda%20Espa%202.png?width=400&quality=80', asin: 'B0H9NJNMNZ' }
+      { img: '/img/agenda-espa-1-v2.png', asin: 'B0H7TFJPQM' },
+      { img: '/img/agenda-espa-2-v2.png', asin: 'B0H9NJNMNZ' },
+      { img: '/img/agenda-espa-3-v2.png', asin: 'B0HDMVTM1D' },
+      { img: '/img/agenda-espa-5-v2.png', asin: 'B0HDMMYRNL' },
+      { img: '/img/agenda-espa-6-v2.png', asin: 'B0HDMR6K9P' },
+      { img: '/img/agenda-espa-8-v2.png', asin: 'B0HDMP8F5H' },
+      { img: '/img/agenda-espa-9-v2.png', asin: 'B0HDMRY8BC' }
     ]
   },
   anglais: {
     name: 'Anglais',
     items: [
-      { img: 'https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/Agenda%20Anglais%201.png?width=400&quality=80', asin: 'B0H8757RWS' },
-      { img: 'https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/Agenda%20Anglais%202.png?width=400&quality=80', asin: 'B0H95QXH5T' },
-      { img: 'https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/Agenda%20Anglais%203.png?width=400&quality=80', asin: 'B0H95BZ11T' },
-      { img: 'https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/Agenda%20Anglais%204.png?width=400&quality=80', asin: 'B0H95GMFNN' },
-      { img: 'https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/Agenda%20Anglais%205.png?width=400&quality=80', asin: 'B0H9H51LC1' },
-      { img: 'https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/Agenda%20Anglais%206.png?width=400&quality=80', asin: 'B0H9LPTY49' }
+      { img: '/img/agenda-anglais-1.png', asin: 'B0H8757RWS' },
+      { img: '/img/agenda-anglais-2.png', asin: 'B0H95QXH5T' },
+      { img: '/img/agenda-anglais-3.png', asin: 'B0H95BZ11T' },
+      { img: '/img/agenda-anglais-4.png', asin: 'B0H95GMFNN' },
+      { img: '/img/agenda-anglais-5.png', asin: 'B0H9H51LC1' },
+      { img: '/img/agenda-anglais-6.png', asin: 'B0H9LPTY49' },
+      { img: '/img/agenda-anglais-7.png', asin: 'B0HCT7QKTV' },
+      { img: '/img/agenda-anglais-8.png', asin: 'B0HCSSWJLN' }
     ]
   },
   enseignant: {
     name: 'Enseignant',
     items: [
-      { img: 'https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/1%20Agenda%20prof%20college%20lycee%203D.png?width=400&quality=80', asin: 'B0H8575XJF' },
-      { img: 'https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/2%20Agenda%20prof%20college%20lycee%203D.png?width=400&quality=80', asin: 'B0H8LSYQHL' },
-      { img: 'https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/3%20Agenda%20prof%20college%20lycee%203D.png?width=400&quality=80', asin: 'B0H8KG21QM' },
-      { img: 'https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/4%20Agenda%20prof%20college%20lycee%203D.png?width=400&quality=80', asin: 'B0H8NSKNHG' },
-      { img: 'https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/5%20Agenda%20prof%20college%20lycee%203D.png?width=400&quality=80', asin: 'B0H8KD7CWT' },
-      { img: 'https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/6%20Agenda%20prof%20college%20lycee%203D.png?width=400&quality=80', asin: 'B0H95FJ2LQ' },
-      { img: 'https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/7%20Agenda%20prof%20college%20lycee%203D.png?width=400&quality=80', asin: 'B0H95G6RC3' },
-      { img: 'https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/8%20Agenda%20prof%20college%20lycee%203D.png?width=400&quality=80', asin: 'B0H9554B6W' },
-      { img: 'https://pandagro.b-cdn.net/Images%20agendas%20la%20trousse/9%20Agenda%20prof%20college%20lycee%203D.png?width=400&quality=80', asin: 'B0H957XC42' }
+      { img: '/img/1-agenda-prof-college-lycee-3d-v4.png', asin: 'B0H8575XJF' },
+      { img: '/img/2-agenda-prof-college-lycee-3d-v4.png', asin: 'B0H8LSYQHL' },
+      { img: '/img/3-agenda-prof-college-lycee-3d-v4.png', asin: 'B0H8KG21QM' },
+      { img: '/img/4-agenda-prof-college-lycee-3d-v4.png', asin: 'B0H8NSKNHG' },
+      { img: '/img/5-agenda-prof-college-lycee-3d-v4.png', asin: 'B0H8KD7CWT' },
+      { img: '/img/6-agenda-prof-college-lycee-3d-v4.png', asin: 'B0H95FJ2LQ' },
+      { img: '/img/7-agenda-prof-college-lycee-3d-v4.png', asin: 'B0H95G6RC3' },
+      { img: '/img/8-agenda-prof-college-lycee-3d-v4.png', asin: 'B0H9554B6W' }
+      // La couverture 9 (« What the Phoque ? » collège-lycée) n'est pas encore
+      // publiée sur Amazon. Elle portait l'ASIN B0H957XC42, qui vend en réalité
+      // le « Planner du professeur » : un client qui laissait un avis dessus le
+      // déposait sur la fiche d'un autre agenda.
     ]
   },
 };
